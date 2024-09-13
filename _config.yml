@@ -2,3 +2,42 @@ title: 我的个人博客
 description: 记录、分享、学习
 author: JIUZHE
 theme: minima # Jekyll 官方提供的经典主题
+
+# Jekyll 设置
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 站点设置
+url: "https://forkicksinuk.github.io" # 替换为你的GitHub Pages URL
+baseurl: "" # 如果你的站点在子目录中，在这里指定
+
+# 分页设置（如果你想使用分页功能）
+paginate: 5
+paginate_path: "/page:num/"
+
+# 排除文件/文件夹
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# 集合设置（如果你使用自定义集合）
+collections:
+  posts:
+    output: true
+
+# 默认布局设置
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
