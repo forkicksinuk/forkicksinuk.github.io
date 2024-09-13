@@ -1,43 +1,59 @@
-title: 我的个人博客
-description: 记录、分享、学习
-author: JIUZHE
-theme: minima # Jekyll 官方提供的经典主题
+# Site settings
+title: JIUZHE BLOG
+SEOTitle: 就这的博客 | JIUZHE Blog
+email: jiuzhey666@gmail.com
+description: "live,laugh,love"
+url: "http://forkicksinuk.github.io"          # your host, for absolute URL
+github_repo: "https://github.com/forkicksinuk/forkicksinuk.github.io.git" # you code repository
 
-# Jekyll 设置
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "live,laugh,love"
+
+
+
+# SNS settings
+RSS: false
+# weibo_username:     qiubaiying
+# zhihu_username:     qiubaiying
+github_username:    forkicksinuk
+# facebook_username: 
+# jianshu_username:   
+# twitter_username:   
+
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
-permalink: /:year/:month/:day/:title/
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
 
-# 站点设置
-url: "https://forkicksinuk.github.io" # 替换为你的GitHub Pages URL
-baseurl: "" # 如果你的站点在子目录中，在这里指定
 
-# 分页设置（如果你想使用分页功能）
-paginate: 5
-paginate_path: "/page:num/"
 
-# 排除文件/文件夹
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
 
-# 集合设置（如果你使用自定义集合）
-collections:
-  posts:
-    output: true
 
-# 默认布局设置
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
