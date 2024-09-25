@@ -22,6 +22,7 @@ github_username:    forkicksinuk
 # twitter_username:   
 
 
+baseurl: ""
 
 
 # Build settings
@@ -35,7 +36,9 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+
 
 
 
@@ -57,3 +60,4 @@ kramdown:
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
+paginate_path: "/page:num/"
