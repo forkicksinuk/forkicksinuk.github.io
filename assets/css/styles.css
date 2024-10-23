@@ -1,0 +1,147 @@
+/* 定义全局 CSS 变量以提高代码可维护性 */
+:root {
+    --primary-color: #007BFF;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --header-bg-color: #4a4a4a;
+    --footer-bg-color: #4a4a4a;
+    --link-hover-color: #0056b3;
+    --meta-text-color: #777;
+    --border-color: #ddd;
+}
+
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 全局样式 */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 页头样式 */
+header {
+    background-color: var(--header-bg-color);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* 主内容样式 */
+main {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+article.blog-post {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--header-bg-color);
+}
+
+p.meta {
+    font-size: 0.9em;
+    color: var(--meta-text-color);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* 链接样式 */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+}
+
+a:visited {
+    color: #5a5a5a;
+}
+
+/* 按钮样式（可选） */
+.btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--link-hover-color);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--footer-bg-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 0;
+    }
+    main {
+        padding: 20px;
+        max-width: 100%;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+}
+
+/* 通用容器样式（可复用） */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
