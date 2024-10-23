@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    
+    <!-- 网站标题 -->
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    
+    <!-- 样式表 -->
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
 </head>
+
 <body>
-  <header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <p>{{ site.description }}</p>
-  </header>
+    <!-- 页头 -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </h1>
+            <p class="site-description">{{ site.description }}</p>
+        </div>
+    </header>
 
-  <main>
-    {% for post in site.posts %}
-      <article>
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p class="post-meta">发布于 {{ post.date | date: "%Y年%m月%d日" }}</p>
-        <p>{{ post.excerpt }}</p>
-        <a href="{{ post.url | relative_url }}">阅读全文 →</a>
-      </article>
-      <hr>
-    {% endfor %}
-  </main>
+    <!-- 主要内容 -->
+    <main class="site-main container">
+        <!-- 文章列表 -->
+        <div class="post-list">
+            {% for post in paginator.posts %}
+            <article class="post-card">
+                <h2 class="post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h2>
+                
+                <div class="post-meta">
+                    <span class="post-date">发布于 {{ post.date | date: "%Y年%m月%d日" }}</span>
+                    {% if post.categories.size > 0 %}
+                    <span class="post-categories">
+                        分类：
+                        {% for category in post.categories %}
+                        <a href="{{ '/categories/' | relative_url }}#{{ category }}">{{ category }}</a>
+                        {% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
 
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
-  </footer>
+                <div class="post-excerpt">
+                    {{ post.excerpt | strip_html | truncate: 200 }}
+                </div>
+
+                <a href="{{ post.url | relative_url }}" class="read-more">
+                    阅读全文 →
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- 分页导航 -->
+        {% if paginator.total_pages > 1 %}
+        <nav class="pagination">
+            {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">上一页</a>
+            {% endif %}
+
+            <span class="page-number">
+                第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页
+            </span>
+
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="copyright">
+                &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
