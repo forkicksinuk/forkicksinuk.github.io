@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+</head>
+<body>
+    <!-- 页头 -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </h1>
+            <p class="site-description">{{ site.description }}</p>
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <!-- 这里将插入页面的具体内容 -->
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="copyright">
+                &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
