@@ -1,47 +1,31 @@
----
-layout: default
-description: "HELLO"
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <p>{{ site.description }}</p>
+  </header>
 
-{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-{% capture cached_sorted_posts %}{{ sorted_posts | jsonify }}{% endcapture %}
-{% assign sorted_posts = cached_sorted_posts | parse_json %}
+  <main>
+    {% for post in site.posts %}
+      <article>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p class="post-meta">发布于 {{ post.date | date: "%Y年%m月%d日" }}</p>
+        <p>{{ post.excerpt }}</p>
+        <a href="{{ post.url | relative_url }}">阅读全文 →</a>
+      </article>
+      <hr>
+    {% endfor %}
+  </main>
 
-{% for post in sorted_posts %}
-<div class="post-preview">
-    <a href="{{ site.baseurl | append: post.url | replace: '//' , '/' }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncatewords: 30 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<p class="pager-info">Page {{ paginator.page }} of {{ paginator.total_pages }}</p>
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//' , '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//' , '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+  </footer>
+</body>
+</html>
