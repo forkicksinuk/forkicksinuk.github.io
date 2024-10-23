@@ -1,15 +1,15 @@
 ---
-layout: page
+layout: default
 description: "HELLO"
 ---
 
-{% assign sorted_posts = paginator.posts | sort: 'date' | reverse %}
+{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
 {% capture cached_sorted_posts %}{{ sorted_posts | jsonify }}{% endcapture %}
 {% assign sorted_posts = cached_sorted_posts | parse_json %}
 
 {% for post in sorted_posts %}
 <div class="post-preview">
-    <a href="{{ site.baseurl | append: post.url | replace: '//', '/' }}">
+    <a href="{{ site.baseurl | append: post.url | replace: '//' , '/' }}">
         <h2 class="post-title">
             {{ post.title }}
         </h2>
