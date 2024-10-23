@@ -4,48 +4,48 @@ title: 首页
 ---
 
 <div class="post-list">
-    {% for post in paginator.posts %}
-    <article class="post-card">
-        <h2 class="post-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
+  {% for post in paginator.posts %}
+  <article class="post-card">
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
 
-        <div class="post-meta">
-            <span class="post-date">发布于 {{ post.date | date: "%Y年%m月%d日" }}</span>
-            {% if post.categories.size > 0 %}
-            <span class="post-categories">
-                分类：
-                {% for category in post.categories %}
-                <a href="{{ '/categories/' | relative_url }}#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-            </span>
-            {% endif %}
-        </div>
+    <div class="post-meta">
+      <span class="post-date">发布于 {{ post.date | date: "%Y年%m月%d日" }}</span>
+      {% if post.categories %}
+      <span class="post-categories">
+        分类：
+        {% for category in post.categories %}
+        <a href="{{ '/categories/' | relative_url }}#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
 
-        <div class="post-excerpt">
-            {{ post.excerpt | strip_html | truncate: 200 }}
-        </div>
+    <div class="post-excerpt">
+      {{ post.excerpt | strip_html | truncate: 200 }}
+    </div>
 
-        <a href="{{ post.url | relative_url }}" class="read-more">
-            阅读全文 →
-        </a>
-    </article>
-    {% endfor %}
+    <a href="{{ post.url | relative_url }}" class="read-more">
+      阅读全文 →
+    </a>
+  </article>
+  {% endfor %}
 </div>
 
 <!-- 分页导航 -->
 {% if paginator.total_pages > 1 %}
 <nav class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">上一页</a>
-    {% endif %}
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">上一页</a>
+  {% endif %}
 
-    <span class="page-number">
-        第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页
-    </span>
+  <span class="page-number">
+    第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页
+  </span>
 
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
-    {% endif %}
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
+  {% endif %}
 </nav>
 {% endif %}

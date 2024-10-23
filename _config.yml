@@ -1,63 +1,48 @@
-# Site settings
+# 站点基本信息
 title: JIUZHE BLOG
-SEOTitle: 就这的博客 | JIUZHE Blog
-email: jiuzhey666@gmail.com
 description: "live,laugh,love"
-url: "https://forkicks.fun"          # your host, for absolute URL
-github_repo: "https://github.com/forkicksinuk/forkicksinuk.github.io.git" # you code repository
+url: "https://forkicks.fun"
+baseurl: ""  # 如果您的网站部署在子目录下，请填写子目录路径，否则留空
 
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+# 作者信息
+author:
+  name: 就这
+  email: jiuzhey666@gmail.com
+
+# 社交媒体设置
+github_username: forkicksinuk
+
+# 侧边栏设置
+sidebar: true
 sidebar-about-description: "live,laugh,love"
 
-
-
-# SNS settings
-RSS: false
-# weibo_username:    
-# zhihu_username:     
-github_username:    forkicksinuk
-# facebook_username: 
-# jianshu_username:   
-# twitter_username:   
-
-
-baseurl: ""
-
-
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-plugins:
-  - jekyll-paginate
-
-
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
+# 构建设置
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  input: GFM  # 使用 GitHub 风格的 Markdown
 
-
-
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
+# 分页设置
+paginate: 10  # 每页显示的文章数
 paginate_path: "/page:num/"
+
+# 插件
+plugins:
+  - jekyll-paginate
+
+# 排除文件和文件夹
+exclude:
+  - less
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - README.md
+
+# 其他设置
+permalink: pretty
+anchorjs: true
+service-worker: true
+chrome-tab-theme-color: "#000000"
+
+# 站点地图和 SEO（可选）
+# 如果需要站点地图和 SEO 支持，可以添加相应的插件和配置
