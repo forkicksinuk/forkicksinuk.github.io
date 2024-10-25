@@ -1,0 +1,112 @@
+---
+layout: default
+title: 关于我
+---
+
+<div class="about-page">
+  <h1>关于我</h1>
+  
+  <section class="about-content">
+    <p>
+      你好！我是就这，一个热爱技术和分享的开发者。这个博客主要用来记录我在编程学习过程中的心得体会、技术分享和一些有趣的发现。
+    </p>
+    
+    <h2>博客内容</h2>
+    <p>
+      在这里，你可以找到：
+    </p>
+    <ul>
+      <li>编程技术分享</li>
+      <li>学习笔记和心得</li>
+      <li>问题解决方案</li>
+      <li>有趣的技术探索</li>
+    </ul>
+
+    <h2>联系方式</h2>
+    <div class="contact-info">
+      <p>
+        如果你有任何问题或建议，欢迎通过以下方式联系我：
+      </p>
+      <ul>
+        <li>
+          <i class="fab fa-github"></i>
+          GitHub：<a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a>
+        </li>
+        <li>
+          <i class="far fa-envelope"></i>
+          Email：<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<style>
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-content {
+  margin-top: 30px;
+  line-height: 1.8;
+}
+
+.about-content h2 {
+  margin: 30px 0 15px;
+  color: var(--primary-color);
+}
+
+.about-content p {
+  margin-bottom: 20px;
+}
+
+.about-content ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  color: var(--primary-color);
+  width: 20px;
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 15px;
+  }
+}
+</style>

@@ -31,117 +31,254 @@ body {
 }
 
 /* 页头样式 */
-header {
+.site-header {
     background-color: var(--header-bg-color);
     color: #fff;
     padding: 40px 0;
     text-align: center;
 }
 
-header h1 {
+.site-title {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
 
-header p {
+.site-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-description {
     font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* 导航菜单样式 */
+.site-nav {
+    margin-top: 20px;
+}
+
+.site-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.site-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 主内容样式 */
-main {
+.site-main {
     padding: 40px;
     max-width: 800px;
     margin: 0 auto;
     flex: 1;
 }
 
-article.blog-post {
+/* 文章列表样式 */
+.post-card {
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border-color);
 }
 
-h2 {
+.post-title {
     font-size: 1.8em;
     margin-bottom: 10px;
-    color: var(--header-bg-color);
 }
 
-p.meta {
+.post-meta {
     font-size: 0.9em;
     color: var(--meta-text-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+.post-excerpt {
+    margin-bottom: 15px;
 }
 
-/* 链接样式 */
-a {
+.read-more {
+    display: inline-block;
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-a:hover, a:focus {
-    text-decoration: underline;
-    color: var(--link-hover-color);
+/* 文章页面样式 */
+.post {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-a:visited {
-    color: #5a5a5a;
+.post-header {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* 按钮样式（可选） */
-.btn {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    margin: 30px 0 15px;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.post-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 标签样式 */
+.tag {
     display: inline-block;
-    transition: background-color 0.3s ease;
+    padding: 2px 8px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    text-decoration: none;
 }
 
-.btn:hover {
+.tag:hover {
+    background-color: #e0e0e0;
+}
+
+/* 分页导航样式 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: var(--link-hover-color);
+}
+
+.page-number {
+    color: var(--meta-text-color);
+}
+
+/* 返回顶部按钮 */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
     background-color: var(--link-hover-color);
 }
 
 /* 页脚样式 */
-footer {
+.site-footer {
     background-color: var(--footer-bg-color);
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    width: 100%;
-    bottom: 0;
+    margin-top: auto;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    header {
+    .site-header {
         padding: 20px 0;
     }
-    main {
+    
+    .site-main {
         padding: 20px;
-        max-width: 100%;
     }
-    header h1 {
+    
+    .site-title {
         font-size: 2em;
     }
-    h2 {
+    
+    .site-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .post-title {
         font-size: 1.5em;
     }
-    p {
-        font-size: 1em;
+    
+    .container {
+        padding: 0 15px;
     }
 }
 
-/* 通用容器样式（可复用） */
+/* 代码块样式 */
+pre {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+code {
+    font-family: 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+/* 通用容器样式 */
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
