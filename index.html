@@ -1,51 +1,103 @@
----
-layout: default
-title: 首页
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  
+  <!-- SEO Tags -->
+  {% seo %}
+  
+  <!-- Feed -->
+  {% feed_meta %}
 
-<div class="post-list">
-  {% for post in paginator.posts %}
-  <article class="post-card">
-    <h2 class="post-title">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h2>
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 
-    <div class="post-meta">
-      <span class="post-date">发布于 {{ post.date | date: "%Y年%m月%d日" }}</span>
-      {% if post.categories %}
-      <span class="post-categories">
-        分类：
-        {% for category in post.categories %}
-        <a href="{{ '/categories/' | relative_url }}#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </span>
+  <!-- Favicon -->
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  {% if site.google_analytics %}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+  <!-- 页头 -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </h1>
+      <p class="site-description">{{ site.description }}</p>
+      
+      <!-- 导航菜单 -->
+      <nav class="site-nav">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">首页</a></li>
+          <li><a href="{{ '/categories' | relative_url }}">分类</a></li>
+          <li><a href="{{ '/tags' | relative_url }}">标签</a></li>
+          <li><a href="{{ '/about' | relative_url }}">关于</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主体内容 -->
+  <main class="site-main container">
+    {{ content }}
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">
+        &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
+      </p>
+      {% if site.github_username %}
+      <div class="social-links">
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
       {% endif %}
     </div>
+  </footer>
 
-    <div class="post-excerpt">
-      {{ post.excerpt | strip_html | truncate: 200 }}
-    </div>
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" title="返回顶部">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-    <a href="{{ post.url | relative_url }}" class="read-more">
-      阅读全文 →
-    </a>
-  </article>
-  {% endfor %}
-</div>
+  <!-- JavaScript -->
+  <script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
 
-<!-- 分页导航 -->
-{% if paginator.total_pages > 1 %}
-<nav class="pagination">
-  {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">上一页</a>
-  {% endif %}
-
-  <span class="page-number">
-    第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页
-  </span>
-
-  {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
-  {% endif %}
-</nav>
-{% endif %}
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
