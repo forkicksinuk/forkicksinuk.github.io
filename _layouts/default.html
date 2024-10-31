@@ -12,11 +12,11 @@
     {% feed_meta %}
 
     <!-- 样式表 -->
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | absolute_url }}">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+    <link rel="icon" href="{{ '/assets/images/favicon.ico' | absolute_url }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | absolute_url }}" type="image/x-icon">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -38,17 +38,17 @@
     <header class="site-header">
         <div class="container">
             <h1 class="site-title">
-                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                <a href="{{ '/' | absolute_url }}">{{ site.title }}</a>
             </h1>
             <p class="site-description">{{ site.description }}</p>
             
             <!-- 导航菜单 -->
             <nav class="site-nav">
                 <ul>
-                    <li><a href="{{ '/' | relative_url }}">首页</a></li>
-                    <li><a href="{{ '/categories' | relative_url }}">分类</a></li>
-                    <li><a href="{{ '/tags' | relative_url }}">标签</a></li>
-                    <li><a href="{{ '/about' | relative_url }}">关于</a></li>
+                    <li><a href="{{ '/' | absolute_url }}">首页</a></li>
+                    <li><a href="{{ '/categories' | absolute_url }}">分类</a></li>
+                    <li><a href="{{ '/tags' | absolute_url }}">标签</a></li>
+                    <li><a href="{{ '/about' | absolute_url }}">关于</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,6 +97,40 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // 代码复制功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为每个代码块添加复制按钮
+            document.querySelectorAll('pre').forEach(function(preBlock) {
+                // 创建复制按钮
+                var copyButton = document.createElement('button');
+                copyButton.className = 'copy-button';
+                copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                
+                // 将pre块包装在一个相对定位的容器中
+                var wrapper = document.createElement('div');
+                wrapper.className = 'code-wrapper';
+                preBlock.parentNode.insertBefore(wrapper, preBlock);
+                wrapper.appendChild(preBlock);
+                wrapper.appendChild(copyButton);
+
+                // 添加点击事件
+                copyButton.addEventListener('click', function() {
+                    var codeBlock = preBlock.querySelector('code') || preBlock;
+                    var code = codeBlock.textContent;
+                    
+                    navigator.clipboard.writeText(code).then(function() {
+                        // 更改按钮状态
+                        copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(function() {
+                            copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                        }, 2000);
+                    }).catch(function(err) {
+                        console.error('Failed to copy text: ', err);
+                    });
+                });
             });
         });
     </script>

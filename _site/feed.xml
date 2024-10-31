@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh" /><updated>2024-10-31T15:17:45+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Blog Title</title><subtitle>Your blog description</subtitle><author><name>Your Name</name></author><entry><title type="html">Fixed Math Formula Rendering Issue</title><link href="http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue/" rel="alternate" type="text/html" title="Fixed Math Formula Rendering Issue" /><published>2024-10-22T00:00:00+08:00</published><updated>2024-10-22T00:00:00+08:00</updated><id>http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue</id><content type="html" xml:base="http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue/"><![CDATA[<p>today i fixed the bug where math formulas can’t be rendered.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh" /><updated>2024-10-31T15:38:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ForKicksInUK</title><subtitle>记录学习和生活</subtitle><author><name>ForKicksInUK</name></author><entry><title type="html">Fixed Math Formula Rendering Issue</title><link href="http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue/" rel="alternate" type="text/html" title="Fixed Math Formula Rendering Issue" /><published>2024-10-22T00:00:00+08:00</published><updated>2024-10-22T00:00:00+08:00</updated><id>http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue</id><content type="html" xml:base="http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue/"><![CDATA[<p>today i fixed the bug where math formulas can’t be rendered.</p>
 
 <p>Now, MathJax has been integrated properly, and you can see math formulas like $E = mc^2$ inline or using display math:</p>
 
 \[\int_{a}^{b} f(x) \, dx = F(b) - F(a)\]
 
-<p>This fix will make reading and writing math on my blog a lot more enjoyable for everyone!</p>]]></content><author><name>Your Name</name></author><category term="blog" /><summary type="html"><![CDATA[today i fixed the bug where math formulas can’t be rendered.]]></summary></entry><entry><title type="html">我的第一篇博客</title><link href="http://localhost:4000/2024/09/13/first/" rel="alternate" type="text/html" title="我的第一篇博客" /><published>2024-09-13T14:47:00+08:00</published><updated>2024-09-13T14:47:00+08:00</updated><id>http://localhost:4000/2024/09/13/first</id><content type="html" xml:base="http://localhost:4000/2024/09/13/first/"><![CDATA[<p>你好，hi</p>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[你好，hi]]></summary></entry><entry><title type="html">D. Longest Max Min Subsequence</title><link href="http://localhost:4000/2024/09/13/cf2001d/" rel="alternate" type="text/html" title="D. Longest Max Min Subsequence" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>http://localhost:4000/2024/09/13/cf2001d</id><content type="html" xml:base="http://localhost:4000/2024/09/13/cf2001d/"><![CDATA[<p>提供一种优先队列的做法。</p>
+<p>This fix will make reading and writing math on my blog a lot more enjoyable for everyone!</p>]]></content><author><name>ForKicksInUK</name></author><category term="blog" /><summary type="html"><![CDATA[today i fixed the bug where math formulas can’t be rendered.]]></summary></entry><entry><title type="html">D. Longest Max Min Subsequence</title><link href="http://localhost:4000/2024/09/13/cf2001d/" rel="alternate" type="text/html" title="D. Longest Max Min Subsequence" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>http://localhost:4000/2024/09/13/cf2001d</id><content type="html" xml:base="http://localhost:4000/2024/09/13/cf2001d/"><![CDATA[<p>提供一种优先队列的做法。</p>
 
 <p>首先，最长序列的长度一定等于数组中有多少不同的数，我们设其为 $m$。</p>
 
@@ -131,7 +131,7 @@ signed main()
 }
 
 
-</code></pre></div></div>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[提供一种优先队列的做法。]]></summary></entry><entry><title type="html">C. Turtle and Good Pairs</title><link href="http://localhost:4000/2024/09/13/cf2003C/" rel="alternate" type="text/html" title="C. Turtle and Good Pairs" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>http://localhost:4000/2024/09/13/cf2003C</id><content type="html" xml:base="http://localhost:4000/2024/09/13/cf2003C/"><![CDATA[<p>贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列</p>
+</code></pre></div></div>]]></content><author><name>ForKicksInUK</name></author><summary type="html"><![CDATA[提供一种优先队列的做法。]]></summary></entry><entry><title type="html">C. Turtle and Good Pairs</title><link href="http://localhost:4000/2024/09/13/cf2003C/" rel="alternate" type="text/html" title="C. Turtle and Good Pairs" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>http://localhost:4000/2024/09/13/cf2003C</id><content type="html" xml:base="http://localhost:4000/2024/09/13/cf2003C/"><![CDATA[<p>贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列</p>
 
 <h1 id="code">code</h1>
 
@@ -197,110 +197,4 @@ int main() {
     return 0;
 }
 
-</code></pre></div></div>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列]]></summary></entry><entry><title type="html">欢迎来到我的博客</title><link href="http://localhost:4000/2024/03/20/welcome-to-my-blog/" rel="alternate" type="text/html" title="欢迎来到我的博客" /><published>2024-03-20T10:00:00+08:00</published><updated>2024-03-20T10:00:00+08:00</updated><id>http://localhost:4000/2024/03/20/welcome-to-my-blog</id><content type="html" xml:base="http://localhost:4000/2024/03/20/welcome-to-my-blog/"><![CDATA[<h2 id="欢迎来到我的博客">欢迎来到我的博客</h2>
-
-<p>这是一篇示例文章，用来展示博客的各种功能和写作规范。在这里，我会介绍如何使用这个博客系统的各种特性。</p>
-
-<h3 id="markdown-语法展示">Markdown 语法展示</h3>
-
-<h4 id="1-文本格式化">1. 文本格式化</h4>
-
-<p>你可以使用 <em>斜体</em> 或 <strong>粗体</strong> 来强调文本。也可以使用 <del>删除线</del> 表示废弃的内容。</p>
-
-<h4 id="2-列表">2. 列表</h4>
-
-<p>无序列表：</p>
-<ul>
-  <li>第一项</li>
-  <li>第二项</li>
-  <li>第三项</li>
-</ul>
-
-<p>有序列表：</p>
-<ol>
-  <li>第一步</li>
-  <li>第二步</li>
-  <li>第三步</li>
-</ol>
-
-<h4 id="3-引用">3. 引用</h4>
-
-<blockquote>
-  <p>这是一段引用文本。
-可以跨越多行。</p>
-</blockquote>
-
-<h4 id="4-代码展示">4. 代码展示</h4>
-
-<p>行内代码：<code class="language-plaintext highlighter-rouge">print("Hello, World!")</code></p>
-
-<p>代码块：</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">True</span>
-
-<span class="c1"># 调用函数
-</span><span class="n">greet</span><span class="p">(</span><span class="s">"访客"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h4 id="5-链接和图片">5. 链接和图片</h4>
-
-<p><a href="https://github.com/forkicksinuk">查看我的GitHub</a></p>
-
-<p><img src="https://via.placeholder.com/600x300" alt="示例图片" /></p>
-
-<h3 id="数学公式支持">数学公式支持</h3>
-
-<p>这个博客支持 LaTeX 数学公式：</p>
-
-<p>行内公式：$E = mc^2$</p>
-
-<p>独立公式：</p>
-
-\[\frac{n!}{k!(n-k)!} = \binom{n}{k}\]
-
-<h3 id="特别功能">特别功能</h3>
-
-<ol>
-  <li><strong>分类系统</strong>
-    <ul>
-      <li>文章可以属于多个分类</li>
-      <li>通过分类页面可以轻松浏览相关文章</li>
-    </ul>
-  </li>
-  <li><strong>标签系统</strong>
-    <ul>
-      <li>使用标签更细致地组织内容</li>
-      <li>标签云展示热门主题</li>
-    </ul>
-  </li>
-  <li><strong>响应式设计</strong>
-    <ul>
-      <li>适配各种设备尺寸</li>
-      <li>提供最佳阅读体验</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="写作建议">写作建议</h3>
-
-<ol>
-  <li>使用清晰的标题层级</li>
-  <li>适当使用格式化来强调重点</li>
-  <li>添加有意义的分类和标签</li>
-  <li>包含必要的代码示例</li>
-  <li>使用图片辅助说明</li>
-</ol>
-
-<h3 id="结语">结语</h3>
-
-<p>希望这篇文章能帮助你了解如何使用这个博客系统。如果你有任何问题或建议，欢迎通过以下方式联系我：</p>
-
-<ul>
-  <li>GitHub: <a href="https://github.com/forkicksinuk">@forkicksinuk</a></li>
-  <li>Email: jiuzhey666@gmail.com</li>
-</ul>
-
-<hr />
-
-<p><strong>注意</strong>：这是一篇示例文章，展示了博客支持的各种功能。你可以参考这篇文章的源码来了解如何使用这些功能。</p>]]></content><author><name>Your Name</name></author><category term="博客" /><category term="介绍" /><category term="Jekyll" /><category term="博客搭建" /><category term="教程" /><summary type="html"><![CDATA[这是一篇介绍博客功能和写作规范的文章，展示了如何使用Markdown语法和博客特性。]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>ForKicksInUK</name></author><summary type="html"><![CDATA[贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列]]></summary></entry></feed>

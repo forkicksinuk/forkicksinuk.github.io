@@ -34,13 +34,6 @@ title: Home
                 </div>
                 {% endif %}
                 
-                {% if post.categories %}
-                <div class="post-categories-links">
-                    {% for category in post.categories %}
-                    <span class="category-link">{{ category }}</span>{% unless forloop.last %} {% endunless %}
-                    {% endfor %}
-                </div>
-                {% endif %}
             </article>
         </a>
         {% endfor %}
