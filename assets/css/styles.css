@@ -1,111 +1,165 @@
-/* Post-specific styles */
-.post {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+/* 定义全局 CSS 变量 */
+:root {
+    --primary-color: #2c3e50;
+    --background-color: #ffffff;
+    --text-color: #2c3e50;
+    --header-bg-color: #34495e;
+    --footer-bg-color: #34495e;
+    --link-hover-color: #3498db;
+    --meta-text-color: #7f8c8d;
+    --border-color: #ecf0f1;
+    --accent-color: #3498db;
+}
+
+/* Reset styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Global styles */
+body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.8;
-    color: #2c3e50;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.post-header {
+/* Container */
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Site Header */
+.site-header {
+    background-color: var(--header-bg-color);
+    color: #fff;
+    padding: 2rem 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.site-title a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.site-title a:hover {
+    opacity: 0.9;
+}
+
+.site-description {
+    font-size: 1.1em;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
+.site-nav {
+    margin-top: 1rem;
+}
+
+.site-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.site-nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-1px);
+}
+
+/* Main Content */
+.site-main {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+/* Post Card (for index page) */
+.post-card {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
 }
 
-.post-title {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #2c3e50;
+.post-card:hover {
+    transform: translateY(-2px);
+}
+
+.post-card .post-title {
+    font-size: 1.8em;
+    margin-bottom: 0.8rem;
+}
+
+.post-card .post-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-card .post-title a:hover {
+    color: var(--accent-color);
 }
 
 .post-meta {
     font-size: 0.9em;
-    color: #7f8c8d;
+    color: var(--meta-text-color);
+    margin-bottom: 1rem;
 }
 
-.post-categories a {
-    color: #3498db;
-    text-decoration: none;
-    margin: 0 0.2rem;
+.post-excerpt {
+    color: #555;
+    margin-bottom: 1rem;
 }
 
-.post-categories a:hover {
-    text-decoration: underline;
+/* Footer */
+.site-footer {
+    background-color: var(--footer-bg-color);
+    color: rgba(255,255,255,0.9);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
 }
 
-.post-content {
-    font-size: 1.1em;
-    line-height: 1.8;
+.copyright {
+    margin-bottom: 1rem;
 }
 
-.post-content h2 {
-    font-size: 1.8em;
-    margin: 2rem 0 1rem;
-    color: #2c3e50;
+.social-links a {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.3em;
+    margin: 0 0.8rem;
+    transition: all 0.2s ease;
 }
 
-.post-content h3 {
-    font-size: 1.5em;
-    margin: 1.8rem 0 1rem;
-    color: #2c3e50;
-}
-
-.post-content p {
-    margin-bottom: 1.5rem;
-}
-
-.post-content img {
-    max-width: 100%;
-    height: auto;
-    margin: 1.5rem auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.post-content blockquote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    border-left: 4px solid #3498db;
-    background-color: #f8f9fa;
-    font-style: italic;
-}
-
-.post-content code {
-    font-family: 'Fira Code', 'Consolas', monospace;
-    background-color: #f8f9fa;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.9em;
-    color: #e83e8c;
-}
-
-.post-content pre {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    border: 1px solid #eee;
-}
-
-.post-content pre code {
-    background-color: transparent;
-    padding: 0;
-    color: #2c3e50;
-}
-
-/* Lists styling */
-.post-content ul, .post-content ol {
-    margin: 1rem 0 1.5rem 2rem;
-}
-
-.post-content li {
-    margin-bottom: 0.5rem;
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Back to top button */
@@ -131,18 +185,50 @@
     transform: translateY(-2px);
 }
 
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.pagination a {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--link-hover-color);
+    transform: translateY(-1px);
+}
+
+.page-number {
+    color: var(--meta-text-color);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
-    .post {
-        margin: 1rem auto;
+    .site-header {
+        padding: 1.5rem 0;
+    }
+    
+    .site-title {
+        font-size: 1.8em;
+    }
+    
+    .site-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
     .post-title {
-        font-size: 2em;
-    }
-    
-    .post-content {
-        font-size: 1em;
+        font-size: 1.5em;
     }
     
     #back-to-top {
@@ -151,25 +237,8 @@
     }
 }
 
-/* Math formula styles */
-.MathJax {
-    overflow-x: auto;
-    max-width: 100%;
-}
-
 /* Selection style */
 ::selection {
-    background-color: #3498db;
+    background-color: var(--accent-color);
     color: white;
-}
-
-/* Link styles */
-a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #2980b9;
 }
