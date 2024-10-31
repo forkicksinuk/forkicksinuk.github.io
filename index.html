@@ -7,7 +7,7 @@ title: Home
     <div class="posts-grid">
         {% for post in paginator.posts %}
         <a href="{{ post.url | relative_url }}" class="post-card-link">
-            <article class="post-card" data-post-id="{{ post.id | slugify }}">
+            <article class="post-card">
                 <h2 class="post-title">{{ post.title }}</h2>
                 
                 <div class="post-meta">
@@ -41,17 +41,6 @@ title: Home
                     {% endfor %}
                 </div>
                 {% endif %}
-
-                <div class="post-interactions">
-                    <button class="interaction-btn like-btn" onclick="event.stopPropagation();">
-                        <i class="fas fa-thumbs-up"></i>
-                        <span class="like-count">0</span>
-                    </button>
-                    <button class="interaction-btn dislike-btn" onclick="event.stopPropagation();">
-                        <i class="fas fa-thumbs-down"></i>
-                        <span class="dislike-count">0</span>
-                    </button>
-                </div>
             </article>
         </a>
         {% endfor %}

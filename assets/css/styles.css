@@ -162,48 +162,6 @@ body {
     color: white;
 }
 
-/* Post Interactions */
-.post-interactions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.interaction-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    background: #f0f0f0;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--text-color);
-}
-
-.interaction-btn:hover {
-    background: #e0e0e0;
-    transform: translateY(-2px);
-}
-
-.interaction-btn.active {
-    background: var(--primary-color);
-    color: white;
-}
-
-.like-btn i, .dislike-btn i {
-    font-size: 1.2rem;
-}
-
-.like-count, .dislike-count {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
 /* Pagination */
 .pagination {
     display: flex;
@@ -315,7 +273,6 @@ body {
 /* Print styles */
 @media print {
     .site-nav,
-    .post-interactions,
     #back-to-top {
         display: none;
     }
