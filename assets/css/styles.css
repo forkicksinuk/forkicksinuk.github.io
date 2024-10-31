@@ -94,7 +94,7 @@ body {
 /* 主内容样式 */
 .site-main {
     padding: 3rem 1rem;
-    max-width: 42rem;
+    max-width: 36rem;
     margin: 0 auto;
     flex: 1;
 }
@@ -167,8 +167,7 @@ body {
 .post-content {
     font-size: 1.1em;
     line-height: 1.8;
-    width: 120%;
-    max-width: 1000px;
+    max-width: 36rem;
     margin: auto;
 }
 
@@ -341,7 +340,7 @@ pre code {
 
 /* 通用容器样式 */
 .container {
-    max-width: 42rem;
+    max-width: 36rem;
     margin: 0 auto;
     padding: 0 1rem;
 }
