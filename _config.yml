@@ -1,7 +1,7 @@
 # Site settings
-title: Your Blog Title
-description: Your blog description
-author: Your Name
+title: ForKicksInUK
+description: 记录学习和生活
+author: ForKicksInUK
 
 # Build settings
 markdown: kramdown
