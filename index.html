@@ -7,7 +7,7 @@ title: Home
 {% for post in paginator.posts %}
 <article class="post-card">
   <h2 class="post-title">
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>  
+    <a href="{{ post.url | relative_url }}" target="_blank">{{ post.title }}</a>  
   </h2>
   
   <div class="post-meta">
