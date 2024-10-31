@@ -167,7 +167,8 @@ body {
 .post-content {
     font-size: 1.1em;
     line-height: 1.8;
-    max-width: 80%;
+    width: 120%;
+    max-width: 1000px;
     margin: auto;
 }
 
