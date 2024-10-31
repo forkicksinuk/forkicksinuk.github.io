@@ -5,57 +5,70 @@ title: Home
 
 <div class="container">
     <div class="posts-grid">
-        {% for post in site.posts %}    
-        <a href="{{ post.url | relative_url }}">
-          <article class="post-card">
-              <h2>{{ post.title }}</h2>
-              <div class="post-meta">
-                  {{ post.date | date: "%B %-d, %Y" }}
-              </div>
-              <div class="post-excerpt">
-                  {{ post.excerpt | strip_html | truncatewords: 50 }}
-              </div>
-              {% if post.categories.size > 0 %}
-              <div class="post-categories">
-                  {% for category in post.categories %}
-                  <span class="category-tag">{{ category }}</span>
-                  {% endfor %}
-              </div>
-              {% endif %}
-          </article>
-        </a>
+        {% for post in paginator.posts %}
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+            <article class="post-card" data-post-id="{{ post.id | slugify }}">
+                <h2 class="post-title">{{ post.title }}</h2>
+                
+                <div class="post-meta">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%Y年%m月%d日" }}
+                    </time>
+                    {% if post.categories %}
+                    <span class="post-categories">
+                        • 分类：
+                        {% for category in post.categories %}
+                        <span class="category-text">{{ category }}</span>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
 
-    <div class="post-excerpt">
-      {{ post.description }}
+                {% if post.description %}
+                <div class="post-excerpt">
+                    {{ post.description }}
+                </div>
+                {% else %}
+                <div class="post-excerpt">
+                    {{ post.excerpt | strip_html | truncate: 200 }}
+                </div>
+                {% endif %}
+                
+                {% if post.categories %}
+                <div class="post-categories-links">
+                    {% for category in post.categories %}
+                    <span class="category-link">{{ category }}</span>{% unless forloop.last %} {% endunless %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="post-interactions">
+                    <button class="interaction-btn like-btn" onclick="event.stopPropagation();">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span class="like-count">0</span>
+                    </button>
+                    <button class="interaction-btn dislike-btn" onclick="event.stopPropagation();">
+                        <i class="fas fa-thumbs-down"></i>
+                        <span class="dislike-count">0</span>
+                    </button>
+                </div>
+            </article>
+        </a>
+        {% endfor %}
     </div>
-    {% else %}
-    <div class="post-excerpt">
-      {{ post.excerpt | strip_html | truncate: 200 }}
+
+    <!-- 分页导航 -->
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; 上一页</a>
+        {% endif %}
+
+        <span class="page-number">第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页</span>
+
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}">下一页 &raquo;</a>
+        {% endif %}
     </div>
     {% endif %}
-  </a>
-  
-  {% if post.categories %}
-  <div class="post-categories-links">
-    {% for category in post.categories %}
-    <a href="{{ '/categories' | relative_url }}#{{ category }}" class="category-link" onclick="event.stopPropagation();">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  </div>
-  {% endif %}
-</article>
-{% endfor %}
-
-<!-- 分页导航 -->
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; 上一页</a>
-  {% endif %}
-
-  <span class="page-number">第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页</span>
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">下一页 &raquo;</a>
-  {% endif %}
 </div>
-{% endif %}

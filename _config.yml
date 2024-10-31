@@ -1,85 +1,39 @@
-# 站点基本信息
-title: JIUZHE BLOG
-description: "live,laugh,love"
-url: "https://forkicks.fun"
-baseurl: ""  # 如果您的网站部署在子目录下，请填写子目录路径，否则留空
+# Site settings
+title: Your Blog Title
+description: Your blog description
+author: Your Name
 
-# 作者信息
-author:
-  name: 就这
-  email: jiuzhey666@gmail.com
-  bio: "热爱技术和分享的开发者"
-
-# 社交媒体设置
-github_username: forkicksinuk
-
-# 侧边栏设置
-sidebar: true
-sidebar-about-description: "live,laugh,love"
-
-# 构建设置
+# Build settings
 markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM  # 使用 GitHub 风格的 Markdown
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
-      start_line: 1
-
-# 分页设置
-paginate: 10  # 每页显示的文章数
+permalink: /:year/:month/:day/:title/
+paginate: 10
 paginate_path: "/page:num/"
 
-# 插件
+# Social media
+github_username: forkicksinuk
+twitter_username: your_twitter_username
+
+# Google Analytics
+google_analytics: G-XXXXXXXXXX  # Replace with your Google Analytics tracking ID
+
+# Disqus Comments
+disqus_shortname: your-disqus-shortname  # Replace with your Disqus shortname
+
+# Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-feed
+  - jekyll-sitemap
 
-# 排除文件和文件夹
-exclude:
-  - less
-  - node_modules
-  - Gruntfile.js
-  - package.json
-  - README.md
-  - .gitignore
-
-# 永久链接设置
-permalink: /:year/:month/:day/:title/
-
-# SEO 设置
-twitter:
-  username: jiuzhe
-  card: summary
-logo: /assets/images/logo.png
-social:
-  name: 就这
-  links:
-    - https://github.com/forkicksinuk
-
-# 其他设置
+# SEO settings
+lang: zh
 timezone: Asia/Shanghai
-encoding: utf-8
-future: true
+url: "https://forkicksinuk.github.io"  # Replace with your site URL
+baseurl: ""
 
-# Google Analytics（可选）
-# google_analytics: UA-XXXXXXXX-X
-
-# 评论系统设置（可选）
-# disqus:
-#   shortname: your-disqus-shortname
-
-# 站点地图设置
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      sitemap: true
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
