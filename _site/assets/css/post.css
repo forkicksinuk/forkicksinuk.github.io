@@ -1,0 +1,170 @@
+/* Post-specific styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.8;
+    background-color: #ffffff;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+}
+
+.post {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.post-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.post-categories a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 0.2rem;
+}
+
+.post-categories a:hover {
+    text-decoration: underline;
+}
+
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    font-size: 1.8em;
+    margin: 2rem 0 1rem;
+    color: #2c3e50;
+}
+
+.post-content h3 {
+    font-size: 1.5em;
+    margin: 1.8rem 0 1rem;
+    color: #2c3e50;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-content blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #3498db;
+    background-color: #f8f9fa;
+    font-style: italic;
+}
+
+.post-content code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+.post-content pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid #eee;
+}
+
+.post-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #2c3e50;
+}
+
+/* Lists styling */
+.post-content ul, .post-content ol {
+    margin: 1rem 0 1.5rem 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: none;
+    background-color: #3498db;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#back-to-top:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Math formula styles */
+.MathJax {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Selection style */
+::selection {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .post {
+        margin: 1rem auto;
+    }
+    
+    .post-title {
+        font-size: 2em;
+    }
+    
+    .post-content {
+        font-size: 1em;
+    }
+    
+    #back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}

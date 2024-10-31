@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="这是一篇介绍博客功能和写作规范的文章，展示了如何使用Markdown语法和博客特性。">
+  
+  <title>欢迎来到我的博客</title>
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="/assets/css/post.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">欢迎来到我的博客</h1>
+      <div class="post-meta">
+        <time datetime="2024-03-20T10:00:00+08:00">
+          2024年03月20日
+        </time>
+        
+        <span class="post-categories">
+          分类：
+          
+          <a href="/categories/#博客">博客</a>, 
+          
+          <a href="/categories/#介绍">介绍</a>
+          
+        </span>
+        
+      </div>
+    </header>
+
+    <!-- MathJax Configuration -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <div class="post-content">
+      <h2 id="欢迎来到我的博客">欢迎来到我的博客</h2>
+
+<p>这是一篇示例文章，用来展示博客的各种功能和写作规范。在这里，我会介绍如何使用这个博客系统的各种特性。</p>
+
+<h3 id="markdown-语法展示">Markdown 语法展示</h3>
+
+<h4 id="1-文本格式化">1. 文本格式化</h4>
+
+<p>你可以使用 <em>斜体</em> 或 <strong>粗体</strong> 来强调文本。也可以使用 <del>删除线</del> 表示废弃的内容。</p>
+
+<h4 id="2-列表">2. 列表</h4>
+
+<p>无序列表：</p>
+<ul>
+  <li>第一项</li>
+  <li>第二项</li>
+  <li>第三项</li>
+</ul>
+
+<p>有序列表：</p>
+<ol>
+  <li>第一步</li>
+  <li>第二步</li>
+  <li>第三步</li>
+</ol>
+
+<h4 id="3-引用">3. 引用</h4>
+
+<blockquote>
+  <p>这是一段引用文本。
+可以跨越多行。</p>
+</blockquote>
+
+<h4 id="4-代码展示">4. 代码展示</h4>
+
+<p>行内代码：<code class="language-plaintext highlighter-rouge">print("Hello, World!")</code></p>
+
+<p>代码块：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="c1"># 调用函数
+</span><span class="n">greet</span><span class="p">(</span><span class="s">"访客"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="5-链接和图片">5. 链接和图片</h4>
+
+<p><a href="https://github.com/forkicksinuk">查看我的GitHub</a></p>
+
+<p><img src="https://via.placeholder.com/600x300" alt="示例图片" /></p>
+
+<h3 id="数学公式支持">数学公式支持</h3>
+
+<p>这个博客支持 LaTeX 数学公式：</p>
+
+<p>行内公式：$E = mc^2$</p>
+
+<p>独立公式：</p>
+
+\[\frac{n!}{k!(n-k)!} = \binom{n}{k}\]
+
+<h3 id="特别功能">特别功能</h3>
+
+<ol>
+  <li><strong>分类系统</strong>
+    <ul>
+      <li>文章可以属于多个分类</li>
+      <li>通过分类页面可以轻松浏览相关文章</li>
+    </ul>
+  </li>
+  <li><strong>标签系统</strong>
+    <ul>
+      <li>使用标签更细致地组织内容</li>
+      <li>标签云展示热门主题</li>
+    </ul>
+  </li>
+  <li><strong>响应式设计</strong>
+    <ul>
+      <li>适配各种设备尺寸</li>
+      <li>提供最佳阅读体验</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="写作建议">写作建议</h3>
+
+<ol>
+  <li>使用清晰的标题层级</li>
+  <li>适当使用格式化来强调重点</li>
+  <li>添加有意义的分类和标签</li>
+  <li>包含必要的代码示例</li>
+  <li>使用图片辅助说明</li>
+</ol>
+
+<h3 id="结语">结语</h3>
+
+<p>希望这篇文章能帮助你了解如何使用这个博客系统。如果你有任何问题或建议，欢迎通过以下方式联系我：</p>
+
+<ul>
+  <li>GitHub: <a href="https://github.com/forkicksinuk">@forkicksinuk</a></li>
+  <li>Email: jiuzhey666@gmail.com</li>
+</ul>
+
+<hr />
+
+<p><strong>注意</strong>：这是一篇示例文章，展示了博客支持的各种功能。你可以参考这篇文章的源码来了解如何使用这些功能。</p>
+
+    </div>
+  </article>
+
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" title="返回顶部">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

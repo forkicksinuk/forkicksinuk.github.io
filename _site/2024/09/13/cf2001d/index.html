@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  
+  <title>D. Longest Max Min Subsequence</title>
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="/assets/css/post.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">D. Longest Max Min Subsequence</h1>
+      <div class="post-meta">
+        <time datetime="2024-09-13T00:00:00+08:00">
+          2024年09月13日
+        </time>
+        
+        <span class="post-categories">
+          分类：
+          
+        </span>
+        
+      </div>
+    </header>
+
+    <!-- MathJax Configuration -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <div class="post-content">
+      <p>提供一种优先队列的做法。</p>
+
+<p>首先，最长序列的长度一定等于数组中有多少不同的数，我们设其为 $m$。</p>
+
+<p>因此，我们选的第一个数，一定是在所有<strong>选了它之后还能再选 $m-1$ 个不同数的数</strong>里面，选一个最大的数。</p>
+
+<p>记该数的位置为 $a$ ，其在数组中出现的最后一个位置为 $b$ ，设 $suf[i]$ 代表从这个数开始选，能选多少不同的数。</p>
+
+<p>则有 $(a,b)$ 内所有的 $suf[i]$ 都减一，因为对于 $(a,b)$ 内的数来说，位置 $b$ 处数是作为一个新的不同数存在的，但是又不能选，所以减一</p>
+
+<h1 id="code">code</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+struct node1
+{
+    int val,index;
+    bool operator&lt;(const node1 &amp;b) const
+    {
+        if(b.val!=val)return b.val&lt;val;
+        else return b.index&lt;index;
+    }
+};
+
+struct node2
+{
+    int val,index;
+    bool operator&lt;(const node2 &amp;b) const
+    {
+        if(b.val!=val)return b.val&gt;val;
+        else return b.index&lt;index;
+    }
+};
+
+int a[300005];
+void solve()
+{
+    int n;
+    cin&gt;&gt;n;
+
+    priority_queue&lt;node1&gt; qmin;
+    priority_queue&lt;node2&gt; qmax;
+
+    for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i];
+
+    map&lt;int,int&gt; rec;
+    stack&lt;int&gt; split;
+    for(int i=n;i&gt;=1;i--)
+    {
+        if(!rec[a[i]])
+        {
+            split.push(i);
+            rec[a[i]]=i;
+        }
+    }
+
+    int it=1;
+    int r=split.top();
+    split.pop();
+    int op=1;
+    map&lt;int,int&gt; vis;
+    int l=1;
+    vector&lt;int&gt; ans;
+    int num=rec.size();
+
+    set&lt;int&gt; finish;
+    while(num)
+    {
+        while(it&lt;=r)
+        {
+            qmax.push({a[it],it});
+            qmin.push({a[it],it});
+            it++;
+        }
+
+        while(!qmax.empty() &amp;&amp; (vis[qmax.top().val]||qmax.top().index&lt;l)) qmax.pop();
+        while(!qmin.empty() &amp;&amp; (vis[qmin.top().val]||qmin.top().index&lt;l)) qmin.pop();
+
+        if(op)
+        {
+            if(!qmax.empty())
+            {
+                auto [val,index]=qmax.top();
+                l=index+1;
+                vis[val]=1;
+                ans.push_back(val);
+                finish.insert(rec[val]);
+            }
+        }
+        else
+        {
+            while(!qmin.empty() &amp;&amp; vis[qmin.top().val]) qmin.pop();
+            if(!qmin.empty())
+            {
+                auto [val,index]=qmin.top();
+                l=index+1;
+                vis[val]=1;
+                ans.push_back(val);
+                finish.insert(rec[val]);
+            }
+        }
+
+
+        while(finish.count(r) &amp;&amp; !split.empty())
+        {
+            r=split.top();
+            split.pop();
+        }
+
+        num--;
+        op^=1;
+
+    }
+    cout&lt;&lt;ans.size()&lt;&lt;'\n';
+    for(auto it: ans )cout&lt;&lt;it&lt;&lt;' ';
+    cout&lt;&lt;"\n\n";
+}
+signed main()
+{
+    //ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    int TT=1;
+    cin&gt;&gt;TT;
+    while(TT--) solve();
+    return 0;
+}
+
+
+</code></pre></div></div>
+
+    </div>
+  </article>
+
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" title="返回顶部">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

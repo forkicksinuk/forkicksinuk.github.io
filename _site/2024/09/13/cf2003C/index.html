@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  
+  <title>C. Turtle and Good Pairs</title>
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="/assets/css/post.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">C. Turtle and Good Pairs</h1>
+      <div class="post-meta">
+        <time datetime="2024-09-13T00:00:00+08:00">
+          2024年09月13日
+        </time>
+        
+        <span class="post-categories">
+          分类：
+          
+        </span>
+        
+      </div>
+    </header>
+
+    <!-- MathJax Configuration -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <div class="post-content">
+      <p>贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列</p>
+
+<h1 id="code">code</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;unordered_map&gt;
+
+using namespace std;
+
+string reorderString(int n, string s) {
+    unordered_map&lt;char, int&gt; freq;
+    for (char c : s) {
+        freq[c]++;
+    }
+    
+    vector&lt;pair&lt;char, int&gt;&gt; charFreqPairs;
+    for (auto&amp; p : freq) {
+        charFreqPairs.push_back(p);
+    }
+    
+    // 按照频率从高到低排序
+    sort(charFreqPairs.begin(), charFreqPairs.end(), [](const pair&lt;char, int&gt;&amp; a, const pair&lt;char, int&gt;&amp; b) {
+        return a.second &gt; b.second;
+    });
+    
+    string result;
+    result.reserve(n);
+    
+    // 尝试均匀分布字符
+    while (!charFreqPairs.empty()) {
+        auto&amp; top = charFreqPairs[0];
+        result.push_back(top.first);
+        top.second--;
+        
+        if (top.second == 0) {
+            charFreqPairs.erase(charFreqPairs.begin());
+        }
+        
+        if (charFreqPairs.size() &gt; 1) {
+            auto&amp; second = charFreqPairs[1];
+            result.push_back(second.first);
+            second.second--;
+            
+            if (second.second == 0) {
+                charFreqPairs.erase(charFreqPairs.begin() + 1);
+            }
+        }
+    }
+    
+    return result;
+}
+
+int main() {
+    int t;
+    cin &gt;&gt; t;
+    while (t--) {
+        int n;
+        string s;
+        cin &gt;&gt; n &gt;&gt; s;
+        cout &lt;&lt; reorderString(n, s) &lt;&lt; endl;
+    }
+    return 0;
+}
+
+</code></pre></div></div>
+
+    </div>
+  </article>
+
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" title="返回顶部">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

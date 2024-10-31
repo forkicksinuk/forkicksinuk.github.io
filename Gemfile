@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
+# 使用 github-pages 而不是单独的 jekyll
+gem "github-pages", group: :jekyll_plugins
 
 # 必要的插件
 group :jekyll_plugins do
@@ -14,7 +15,6 @@ end
 platforms :mingw, :x64_mingw, :mswin do
   gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
-  gem "wdm", "~> 0.1.1"
 end
 
 # 锁定 webrick 版本，解决 Ruby 3.0+ 兼容性问题
