@@ -37,14 +37,4 @@ layout: default
     {{ content }}
   </div>
 
-  <footer class="post-footer">
-    {% if page.tags %}
-    <div class="post-tags">
-      标签：
-      {% for tag in page.tags %}
-      <a href="{{ '/tags/' | relative_url }}#{{ tag }}" class="tag">{{ tag }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </footer>
 </article>
