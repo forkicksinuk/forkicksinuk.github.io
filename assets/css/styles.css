@@ -94,7 +94,7 @@ body {
 /* 主内容样式 */
 .site-main {
     padding: 3rem 1rem;
-    max-width: 36rem;
+    max-width: 60rem;
     margin: 0 auto;
     flex: 1;
 }
@@ -340,7 +340,7 @@ pre code {
 
 /* 通用容器样式 */
 .container {
-    max-width: 36rem;
+    max-width: 60rem;
     margin: 0 auto;
     padding: 0 1rem;
 }
