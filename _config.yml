@@ -29,7 +29,7 @@ plugins:
 # SEO settings
 lang: zh
 timezone: Asia/Shanghai
-url: "https://forkicksinuk.github.io"  # Replace with your site URL
+url: "https://forkicks.fun"  # Updated to correct domain
 baseurl: ""
 
 # Exclude files
