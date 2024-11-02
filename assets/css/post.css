@@ -63,6 +63,7 @@ pre {
     border-radius: 8px;
     overflow-x: auto;
     margin: 0;
+    position: relative;
 }
 
 pre code {
@@ -70,13 +71,14 @@ pre code {
     font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.5;
-    padding-right: 2.5rem;
 }
 
 .copy-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    position: sticky;
+    top: 50%;
+    float: right;
+    transform: translateY(-50%);
+    margin-right: -3rem;
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
@@ -84,12 +86,17 @@ pre code {
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0.7;
+    opacity: 0;
     z-index: 10;
 }
 
+.code-wrapper:hover .copy-button {
+    opacity: 0.7;
+    margin-right: 0.5rem;
+}
+
 .copy-button:hover {
-    opacity: 1;
+    opacity: 1 !important;
     background: rgba(255, 255, 255, 0.2);
 }
 
