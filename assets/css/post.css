@@ -74,11 +74,9 @@ pre code {
 }
 
 .copy-button {
-    position: sticky;
-    top: 50%;
-    float: right;
-    transform: translateY(-50%);
-    margin-right: -3rem;
+    position: fixed; /* 固定定位 */
+    top: 20px;       /* 距离顶部20像素 */
+    right: 20px;     /* 距离右侧20像素 */
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
@@ -86,9 +84,11 @@ pre code {
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0;
-    z-index: 10;
+    opacity: 0.8;    /* 设置初始透明度 */
+    z-index: 10;     /* 确保按钮位于其他元素之上 */
 }
+
+
 
 .code-wrapper:hover .copy-button {
     opacity: 0.7;
