@@ -182,7 +182,7 @@ pre code {
     line-height: 1.6;
 }
 
-.post-categories-links {
+.post-tags-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -190,7 +190,7 @@ pre code {
     padding-top: 1rem;
 }
 
-.category-link {
+.tag-link {
     background: #f0f0f0;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
@@ -199,7 +199,7 @@ pre code {
     transition: all 0.3s ease;
 }
 
-.category-link:hover {
+.tags-link:hover {
     background: var(--primary-color);
     color: white;
 }
