@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh" /><updated>2024-10-31T15:38:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ForKicksInUK</title><subtitle>记录学习和生活</subtitle><author><name>ForKicksInUK</name></author><entry><title type="html">Fixed Math Formula Rendering Issue</title><link href="http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue/" rel="alternate" type="text/html" title="Fixed Math Formula Rendering Issue" /><published>2024-10-22T00:00:00+08:00</published><updated>2024-10-22T00:00:00+08:00</updated><id>http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue</id><content type="html" xml:base="http://localhost:4000/2024/10/22/fixed-math-formula-rendering-issue/"><![CDATA[<p>today i fixed the bug where math formulas can’t be rendered.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://forkicks.fun/feed.xml" rel="self" type="application/atom+xml" /><link href="https://forkicks.fun/" rel="alternate" type="text/html" hreflang="zh" /><updated>2024-11-04T13:46:36+08:00</updated><id>https://forkicks.fun/feed.xml</id><title type="html">JIUZHE</title><subtitle>记录学习和生活</subtitle><author><name>JIUZHE</name></author><entry><title type="html">Fixed Math Formula Rendering Issue</title><link href="https://forkicks.fun/2024/10/22/fixed-math-formula-rendering-issue/" rel="alternate" type="text/html" title="Fixed Math Formula Rendering Issue" /><published>2024-10-22T00:00:00+08:00</published><updated>2024-10-22T00:00:00+08:00</updated><id>https://forkicks.fun/2024/10/22/fixed-math-formula-rendering-issue</id><content type="html" xml:base="https://forkicks.fun/2024/10/22/fixed-math-formula-rendering-issue/"><![CDATA[<p>today i fixed the bug where math formulas can’t be rendered.</p>
 
 <p>Now, MathJax has been integrated properly, and you can see math formulas like $E = mc^2$ inline or using display math:</p>
 
 \[\int_{a}^{b} f(x) \, dx = F(b) - F(a)\]
 
-<p>This fix will make reading and writing math on my blog a lot more enjoyable for everyone!</p>]]></content><author><name>ForKicksInUK</name></author><category term="blog" /><summary type="html"><![CDATA[today i fixed the bug where math formulas can’t be rendered.]]></summary></entry><entry><title type="html">D. Longest Max Min Subsequence</title><link href="http://localhost:4000/2024/09/13/cf2001d/" rel="alternate" type="text/html" title="D. Longest Max Min Subsequence" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>http://localhost:4000/2024/09/13/cf2001d</id><content type="html" xml:base="http://localhost:4000/2024/09/13/cf2001d/"><![CDATA[<p>提供一种优先队列的做法。</p>
+<p>This fix will make reading and writing math on my blog a lot more enjoyable for everyone!</p>]]></content><author><name>JIUZHE</name></author><category term="blog" /><summary type="html"><![CDATA[today i fixed the bug where math formulas can’t be rendered.]]></summary></entry><entry><title type="html">D. Longest Max Min Subsequence</title><link href="https://forkicks.fun/2024/09/13/cf2001d/" rel="alternate" type="text/html" title="D. Longest Max Min Subsequence" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>https://forkicks.fun/2024/09/13/cf2001d</id><content type="html" xml:base="https://forkicks.fun/2024/09/13/cf2001d/"><![CDATA[<p>提供一种优先队列的做法。</p>
 
 <p>首先，最长序列的长度一定等于数组中有多少不同的数，我们设其为 $m$。</p>
 
@@ -131,7 +131,7 @@ signed main()
 }
 
 
-</code></pre></div></div>]]></content><author><name>ForKicksInUK</name></author><summary type="html"><![CDATA[提供一种优先队列的做法。]]></summary></entry><entry><title type="html">C. Turtle and Good Pairs</title><link href="http://localhost:4000/2024/09/13/cf2003C/" rel="alternate" type="text/html" title="C. Turtle and Good Pairs" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>http://localhost:4000/2024/09/13/cf2003C</id><content type="html" xml:base="http://localhost:4000/2024/09/13/cf2003C/"><![CDATA[<p>贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列</p>
+</code></pre></div></div>]]></content><author><name>JIUZHE</name></author><summary type="html"><![CDATA[提供一种优先队列的做法。]]></summary></entry><entry><title type="html">C. Turtle and Good Pairs</title><link href="https://forkicks.fun/2024/09/13/cf2003C/" rel="alternate" type="text/html" title="C. Turtle and Good Pairs" /><published>2024-09-13T00:00:00+08:00</published><updated>2024-09-13T00:00:00+08:00</updated><id>https://forkicks.fun/2024/09/13/cf2003C</id><content type="html" xml:base="https://forkicks.fun/2024/09/13/cf2003C/"><![CDATA[<p>贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列</p>
 
 <h1 id="code">code</h1>
 
@@ -197,4 +197,4 @@ int main() {
     return 0;
 }
 
-</code></pre></div></div>]]></content><author><name>ForKicksInUK</name></author><summary type="html"><![CDATA[贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>JIUZHE</name></author><summary type="html"><![CDATA[贪心地想：要尽可能地减少连续相同字符，所以我们需要尽可能地将字符均匀排列]]></summary></entry></feed>

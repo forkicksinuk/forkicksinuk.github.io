@@ -1,7 +1,7 @@
 # Site settings
-title: ForKicksInUK
+title: JIUZHE
 description: 记录学习和生活
-author: ForKicksInUK
+author: JIUZHE
 
 # Build settings
 markdown: kramdown
@@ -11,13 +11,7 @@ paginate_path: "/page:num/"
 
 # Social media
 github_username: forkicksinuk
-twitter_username: your_twitter_username
 
-# Google Analytics
-google_analytics: G-XXXXXXXXXX  # Replace with your Google Analytics tracking ID
-
-# Disqus Comments
-disqus_shortname: your-disqus-shortname  # Replace with your Disqus shortname
 
 # Plugins
 plugins:

@@ -19,3 +19,6 @@ end
 
 # 锁定 webrick 版本，解决 Ruby 3.0+ 兼容性问题
 gem "webrick", "~> 1.7"
+
+gem 'fiddle'
+gem 'faraday-retry'

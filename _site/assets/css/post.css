@@ -63,6 +63,7 @@ pre {
     border-radius: 8px;
     overflow-x: auto;
     margin: 0;
+    position: relative;
 }
 
 pre code {
@@ -70,13 +71,12 @@ pre code {
     font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.5;
-    padding-right: 2.5rem;
 }
 
 .copy-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    position: fixed; /* 固定定位 */
+    top: 20px;       /* 距离顶部20像素 */
+    right: 20px;     /* 距离右侧20像素 */
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     border: none;
@@ -84,12 +84,19 @@ pre code {
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
+    opacity: 0.8;    /* 设置初始透明度 */
+    z-index: 10;     /* 确保按钮位于其他元素之上 */
+}
+
+
+
+.code-wrapper:hover .copy-button {
     opacity: 0.7;
-    z-index: 10;
+    margin-right: 0.5rem;
 }
 
 .copy-button:hover {
-    opacity: 1;
+    opacity: 1 !important;
     background: rgba(255, 255, 255, 0.2);
 }
 
