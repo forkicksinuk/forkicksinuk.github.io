@@ -25,6 +25,9 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -142,6 +145,9 @@ pre code {
     color: var(--link-hover-color);
 }
 
+.line-blank{
+
+}
 
 .post-card {
     background: var(--card-bg);
