@@ -6,7 +6,6 @@ title: Home
 <div class="container">
     {% for post in paginator.posts %}
     <a href="{{ post.url | relative_url }}" class="post-card-link">
-        <div class="posts-grid">
             <article class="post-card">
                 <h2 class="post-title">{{ post.title }}</h2>
                 <div class="post-meta">
@@ -35,9 +34,7 @@ title: Home
                     {{ post.excerpt | strip_html | truncate: 200 }}
                 </div>
                 {% endif %}
-                
             </article>
-        </div>
     </a>
     {% endfor %}
 
