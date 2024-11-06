@@ -2,9 +2,10 @@
 layout: post
 title: "推荐几个好用的prompt"
 date: 2024-11-06
-tag: [blog]
+tags: [blog, AI, prompt, tools]
 published: true
 ---
+
 
 作为一个llm爱好者，我想分享几个我平时经常用的几个prompt
 

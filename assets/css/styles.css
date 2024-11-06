@@ -7,6 +7,7 @@
     --border-color: #eaeaea;
     --link-color: #2980b9;
     --card-bg: #fff;
+    --tag-bg:#ded8a9;
 }
 [data-theme="dark"] {
     --primary-color: #2980b9;
@@ -16,6 +17,7 @@
     --border-color: #333333;
     --link-color: #3498db;
     --card-bg: #1e1e1e;
+    --tag-bg:#735b12;
 }
 
 
@@ -212,20 +214,11 @@ pre code {
     line-height: 1.6;
 }
 
-.post-tags-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: auto;
-    padding-top: 1rem;
-}
-
-.tag-link {
-    background: #9ae4ef;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    color: #666;
+.post-tag {
+    color: var(--text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: var(--tag-bg);
     text-decoration: none;
 }
 
