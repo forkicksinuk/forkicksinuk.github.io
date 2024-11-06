@@ -212,17 +212,12 @@ pre code {
 }
 
 .tag-link {
-    background: #f0f0f0;
+    background: #15b6cf;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.9rem;
     color: #666;
-    transition: all 0.3s ease;
-}
-
-.tags-link:hover {
-    background: var(--primary-color);
-    color: white;
+    text-decoration: none;
 }
 
 /* Pagination */
