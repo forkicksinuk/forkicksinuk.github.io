@@ -1,1 +1,11 @@
 sitemap.xml text eol=lf
+# 将所有文本文件使用 LF 作为行尾符
+* text=auto eol=lf
+
+# 对 HTML、CSS、XML 等文件指定 LF 行尾符
+*.html text eol=lf
+*.css text eol=lf
+*.xml text eol=lf
+
+# Windows 环境下的批处理文件保留 CRLF
+*.bat text eol=crlf

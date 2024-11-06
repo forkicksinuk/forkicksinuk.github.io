@@ -14,31 +14,30 @@
 <meta property="og:locale" content="zh" />
 <meta name="description" content="记录学习和生活" />
 <meta property="og:description" content="记录学习和生活" />
-<link rel="canonical" href="https://forkicks.fun/tags/" />
-<meta property="og:url" content="https://forkicks.fun/tags/" />
+<link rel="canonical" href="http://localhost:4000/tags/" />
+<meta property="og:url" content="http://localhost:4000/tags/" />
 <meta property="og:site_name" content="JIUZHE" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="标签云" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JIUZHE"},"description":"记录学习和生活","headline":"标签云","url":"https://forkicks.fun/tags/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JIUZHE"},"description":"记录学习和生活","headline":"标签云","url":"http://localhost:4000/tags/"}</script>
 <!-- End Jekyll SEO tag -->
 
     
     <!-- Feed -->
-    <link type="application/atom+xml" rel="alternate" href="https://forkicks.fun/feed.xml" title="JIUZHE" />
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="JIUZHE" />
 
     <!-- 样式表 -->
-    <link rel="stylesheet" href="https://forkicks.fun/assets/css/styles.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/styles.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://forkicks.fun/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://forkicks.fun/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:4000/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.ico" type="image/x-icon">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    
+
 </head>
 
 <body>
@@ -46,20 +45,20 @@
     <header class="site-header">
         <div class="container">
             <h1 class="site-title">
-                <a href="https://forkicks.fun/">JIUZHE</a>
+                <a href="http://localhost:4000/">JIUZHE</a>
             </h1>
             <p class="site-description">记录学习和生活</p>
             
             <!-- 导航菜单 -->
             <nav class="site-nav">
                 <ul>
-                    <li><a href="https://forkicks.fun/">首页</a></li>
-                    <li><a href="https://forkicks.fun/categories">分类</a></li>
-                    <li><a href="https://forkicks.fun/tags">标签</a></li>
-                    <li><a href="https://forkicks.fun/about">关于</a></li>
+                    <li><a href="http://localhost:4000/">首页</a></li>
+                    <li><a href="http://localhost:4000/tags">标签</a></li>
+                    <li><a href="http://localhost:4000/about">关于</a></li>
                 </ul>
             </nav>
         </div>
+        <button id="theme-toggle"></button>
     </header>
 
     <!-- 主体内容 -->
@@ -70,101 +69,32 @@
   <div class="tag-cloud">
     
     
+      
+      
+      <a href="#blog" class="tag-item" data-count="1">
+        blog <span class="count">(1)</span>
+      </a>
+    
   </div>
 
   <div class="tag-list">
     
+      
+      <section class="tag-section" id="blog">
+        <h2 class="tag-title">blog</h2>
+        <ul class="post-list">
+          
+            <li class="post-item">
+              <span class="post-date">2024-11-06</span>
+              <a href="/2024/11/06/prompt-recommend/" class="post-link">推荐几个好用的prompt</a>
+            </li>
+          
+        </ul>
+      </section>
+    
   </div>
 </div>
 
-<style>
-.tags-page {
-  padding: 20px 0;
-}
-
-.tag-cloud {
-  margin: 30px 0;
-  text-align: center;
-}
-
-.tag-item {
-  display: inline-block;
-  margin: 5px;
-  padding: 5px 10px;
-  background-color: #f0f0f0;
-  border-radius: 15px;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: all 0.3s ease;
-}
-
-.tag-item:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.tag-item .count {
-  font-size: 0.8em;
-  color: var(--meta-text-color);
-}
-
-.tag-item:hover .count {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.tag-section {
-  margin-bottom: 40px;
-}
-
-.tag-title {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.post-list {
-  list-style: none;
-  padding: 0;
-}
-
-.post-item {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: baseline;
-}
-
-.post-date {
-  color: var(--meta-text-color);
-  font-size: 0.9em;
-  margin-right: 15px;
-  min-width: 100px;
-}
-
-.post-link {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.post-link:hover {
-  color: var(--primary-color);
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .tag-cloud {
-    text-align: left;
-  }
-  
-  .post-item {
-    flex-direction: column;
-  }
-  
-  .post-date {
-    margin-bottom: 5px;
-  }
-}
-</style>
 
     </main>
 
@@ -243,5 +173,6 @@
             });
         });
     </script>
+    <script src="http://localhost:4000/assets/js/theme-toggle.js"></script>
 </body>
 </html>
