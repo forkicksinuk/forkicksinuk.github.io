@@ -1,0 +1,88 @@
+/* Tag page styles */
+.tags-page {
+    padding: 20px 0;
+}
+
+.tag-cloud {
+    margin: 30px 0;
+    text-align: center;
+    background-color: var(--card-bg);
+}
+
+.tag-item {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.tag-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tag-item .count {
+    font-size: 0.8em;
+    color: var(--meta-text-color);
+}
+
+.tag-item:hover .count {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tag-section {
+    margin-bottom: 40px;
+}
+
+.tag-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.post-date {
+    color: var(--meta-text-color);
+    font-size: 0.9em;
+    margin-right: 15px;
+    min-width: 100px;
+}
+
+.post-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.post-link:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tag-cloud {
+        text-align: left;
+    }
+    
+    .post-item {
+        flex-direction: column;
+    }
+    
+    .post-date {
+        margin-bottom: 5px;
+    }
+}

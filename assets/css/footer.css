@@ -1,0 +1,29 @@
+/* Footer styles */
+.site-footer {
+    background-color: var(--header-bg);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.copyright {
+    text-align: center;
+    color: #666;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--link-hover-color);
+}

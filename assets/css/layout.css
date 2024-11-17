@@ -1,0 +1,40 @@
+/* Container and layout styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    /* Mobile first (small screens) */
+    max-width: 100%;
+
+    /* Tablet */
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+
+    /* Laptop */
+    @media (min-width: 1024px) {
+        max-width: 960px;
+    }
+
+    /* Desktop */
+    @media (min-width: 1280px) {
+        max-width: 1200px;
+    }
+
+    /* Large Desktop */
+    @media (min-width: 1536px) {
+        max-width: 1400px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .site-nav,
+    #back-to-top {
+        display: none;
+    }
+}

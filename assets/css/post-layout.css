@@ -1,0 +1,34 @@
+/* Post layout styles */
+.post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.post-meta time {
+    margin-right: 1rem;
+}
+
+.post-categories a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.post-categories a:hover {
+    text-decoration: underline;
+}

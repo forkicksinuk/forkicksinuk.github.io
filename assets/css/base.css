@@ -1,0 +1,36 @@
+/* Base styles and CSS variables */
+:root {
+    --primary-color: #3498db;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --header-bg: #fff;
+    --border-color: #eaeaea;
+    --link-color: #2980b9;
+    --card-bg: #fff;
+    --tag-bg:#ded8a9;
+}
+
+[data-theme="dark"] {
+    --primary-color: #2980b9;
+    --text-color: #f0f0f0;
+    --background-color: #121212;
+    --header-bg: #1e1e1e;
+    --border-color: #333333;
+    --link-color: #3498db;
+    --card-bg: #1e1e1e;
+    --tag-bg:#735b12;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}

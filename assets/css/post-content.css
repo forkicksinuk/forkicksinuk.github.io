@@ -1,0 +1,24 @@
+/* Post content styles */
+.post-content {
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 2rem 0 1rem;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* MathJax styles */
+.MathJax {
+    overflow-x: auto;
+    max-width: 100%;
+}

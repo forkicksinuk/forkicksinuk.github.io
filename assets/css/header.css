@@ -1,0 +1,59 @@
+/* Header styles */
+.site-header {
+    background-color: var(--header-bg);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.site-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-description {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+.site-nav {
+    margin-top: 1rem;
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.site-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.site-nav a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+    .site-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+}
