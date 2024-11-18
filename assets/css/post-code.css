@@ -5,7 +5,7 @@
 }
 
 pre {
-    background: #2d2d2d;
+    background: var(--code-backround-color);
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
@@ -14,14 +14,13 @@ pre {
 }
 
 pre code {
-    color: #fff;
     font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
 .copy-button {
-    position: fixed;
+    position: sticky;
     top: 20px;
     right: 20px;
     padding: 0.5rem;

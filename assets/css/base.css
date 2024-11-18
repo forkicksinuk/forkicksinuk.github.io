@@ -3,6 +3,8 @@
     --primary-color: #3498db;
     --text-color: #333;
     --background-color: #f8f9fa;
+    --code-backround-color: #e9a94f;
+    --code-font-color: #e0e1e2;
     --header-bg: #fff;
     --border-color: #eaeaea;
     --link-color: #2980b9;
@@ -14,6 +16,8 @@
     --primary-color: #2980b9;
     --text-color: #f0f0f0;
     --background-color: #121212;
+    --code-backround-color: #603a04;
+    --code-font-color: #1057ae;
     --header-bg: #1e1e1e;
     --border-color: #333333;
     --link-color: #3498db;
