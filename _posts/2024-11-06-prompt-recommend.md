@@ -10,12 +10,13 @@ published: true
 作为一个llm爱好者，我想分享几个我平时经常用的几个prompt
 
 # 单词讲解
+
 在我遇到一个新的单词的时候（通常是英语），我们通常会查英汉字典。但是想沉浸在纯英文环境下的话，还是得看英英字典。
 
 而在我看英英字典的过程中，我发现这类字典的解释通常言简意赅，并且解释里用到了又一个新的单词。所以这时候就需要llm用最简单的形式来为我们讲解了。
 这类问题我通常用claude 解决
 
-```
+```plaintext
 Break down and explain this word/term thoroughly, using simple language that beginners can understand, while maintaining the comprehensive style of major dictionaries like Cambridge and Oxford
 ```
 
@@ -26,7 +27,7 @@ Break down and explain this word/term thoroughly, using simple language that beg
 这类问题我通常用claude 解决
 
 
-```
+```plaintext
 1.将文本翻译成中文
 
 2.输出一行分割线（非代码框）
@@ -45,7 +46,7 @@ Break down and explain this word/term thoroughly, using simple language that beg
 这类问题通常是开放性问题，即需要多角度看待的问题。ai能帮助我们更全面地看待问题。
 这类问题我通常用gpt-4o 解决
 
-```
+```plaintext
 请多角度深入、详细、深度分析[]，如果你认为有意思的点，那么着重讲讲
 ```
 
@@ -61,7 +62,7 @@ Break down and explain this word/term thoroughly, using simple language that beg
 
 这个时候我们只需要把 题目截个图发给gpt就可以了，目前来看，gpt-4o 的ocr能力最强
 
-```
+```plaintext
 【图片内容】
 只需提取文字，不要有任何多余的无关文字输出！！
 ```

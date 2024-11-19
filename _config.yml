@@ -5,10 +5,6 @@ author: JIUZHE
 
 # Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: none
-  syntax_highlighter_opts: {}
 
 permalink: /:year/:month/:day/:title/
 paginate: 10
@@ -36,3 +32,5 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+
+highlighter: rouge

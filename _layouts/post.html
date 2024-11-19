@@ -1,7 +1,9 @@
 ---
 layout: default
-custom_css:
-  - assets/css/post.css
+additional_css:
+  - /assets/css/post.css
+additional_js:
+  - /assets/js/copy-code.js
 ---
 <article class="post">
   <header class="post-header">
@@ -31,6 +33,9 @@ custom_css:
     };
   </script>
   <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <div class="post-content">
     {{ content }}

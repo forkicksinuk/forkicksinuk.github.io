@@ -21,8 +21,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    {% if page.custom_css %}
-        {% for css_file in page.custom_css %}
+    <!-- Additional CSS -->
+    {% if layout.additional_css %}
+        {% for css_file in layout.additional_css %}
             <link rel="stylesheet" href="{{ css_file | relative_url }}">
         {% endfor %}
     {% endif %}
@@ -75,9 +76,15 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
+    <!-- Base JavaScript -->
     <script src="{{ '/assets/js/back-to-top.js' | absolute_url }}"></script>
-    <script src="{{ '/assets/js/copy-code.js' | absolute_url }}"></script>
     <script src="{{ '/assets/js/theme-toggle.js' | absolute_url }}"></script>
+
+    <!-- Additional JavaScript -->
+    {% if layout.additional_js %}
+        {% for js_file in layout.additional_js %}
+            <script src="{{ js_file | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>

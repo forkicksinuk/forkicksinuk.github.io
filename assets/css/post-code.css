@@ -1,46 +1,115 @@
-/* Simple code block styles without syntax highlighting */
-.code-wrapper {
+.highlight {
+    margin: 0;
+    border-radius: 8px;
     position: relative;
-    margin: 1.5rem 0;
 }
 
 pre {
-    background: var(--code-background-color);
     padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
     margin: 0;
-    position: relative;
+    overflow-x: auto;
 }
 
 pre code {
     font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--code-font-color);
 }
 
+/* Copy button styles */
 .copy-button {
     position: sticky;
-    top: 20px;
-    right: 20px;
-    padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.1);
-    border: none;
-    border-radius: 4px;
+    top: 10px;
+    float: right;
+    margin-right: 10px;
+    padding: 6px 12px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
     color: #333;
     cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.8;
+    font-size: 14px;
+    transition: all 0.2s ease;
     z-index: 10;
 }
 
-.code-wrapper:hover .copy-button {
-    opacity: 0.7;
-    margin-right: 0.5rem;
+.copy-button:hover {
+    background: #e0e0e0;
 }
 
-.copy-button:hover {
-    opacity: 1 !important;
-    background: rgba(0, 0, 0, 0.2);
+/* Rouge Syntax Highlighting */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
+    color: #569CD6;
+    font-weight: bold;
+}
+
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb {
+    color: #CE9178;
+}
+
+.highlight .m, .highlight .mi, .highlight .mf {
+    color: #B5CEA8;
+}
+
+.highlight .c, .highlight .c1, .highlight .cm {
+    color: #6A9955;
+    font-style: italic;
+}
+
+.highlight .nf, .highlight .fm {
+    color: #DCDCAA;
+}
+
+.highlight .nc, .highlight .nn {
+    color: #4EC9B0;
+}
+
+.highlight .nv {
+    color: #9CDCFE;
+}
+
+.highlight .no {
+    color: #4FC1FF;
+}
+
+.highlight .o {
+    color: #D4D4D4;
+}
+
+.highlight .p {
+    color: #D4D4D4;
+}
+
+.highlight .nb {
+    color: #569CD6;
+}
+
+.highlight .nx {
+    color: #9CDCFE;
+}
+
+.highlight .kc {
+    color: #569CD6;
+    font-weight: bold;
+}
+
+.highlight .se {
+    color: #D7BA7D;
+}
+
+.highlight .sr {
+    color: #D16969;
+}
+
+.highlight .na {
+    color: #9CDCFE;
+}
+
+.highlight .dl {
+    color: #CE9178;
+}
+
+.highlight .kw {
+    color: #569CD6;
+    font-weight: bold;
 }

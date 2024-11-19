@@ -1,28 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 为每个代码块添加复制按钮
-    document.querySelectorAll('pre').forEach(function(preBlock) {
+    document.querySelectorAll('div[class*="language-"]').forEach(function(block) {
         // 创建复制按钮
-        var copyButton = document.createElement('button');
+        let copyButton = document.createElement('button');
         copyButton.className = 'copy-button';
-        copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+        copyButton.textContent = '复制';
         
-        // 将pre块包装在一个相对定位的容器中
-        var wrapper = document.createElement('div');
-        wrapper.className = 'code-wrapper';
-        preBlock.parentNode.insertBefore(wrapper, preBlock);
-        wrapper.appendChild(preBlock);
-        wrapper.appendChild(copyButton);
+        // 获取代码块
+        let code = block.querySelector("div.highlight");
+        let preElement = code.querySelector('pre');
+        
+        // 将复制按钮插入到pre元素之前
+        code.insertBefore(copyButton, preElement);
 
         // 添加点击事件
         copyButton.addEventListener('click', function() {
-            var codeBlock = preBlock.querySelector('code') || preBlock;
-            var code = codeBlock.textContent;
+            let codeBlock = code.querySelector('pre code');
+            if (!codeBlock) return;
             
-            navigator.clipboard.writeText(code).then(function() {
-                // 更改按钮状态
-                copyButton.innerHTML = '<i class="fas fa-check"></i>';
+            let codeContent = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(codeContent).then(function() {
+                // 更改按钮文本
+                copyButton.textContent = '成功';
                 setTimeout(function() {
-                    copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyButton.textContent = '复制';
                 }, 2000);
             }).catch(function(err) {
                 console.error('Failed to copy text: ', err);
