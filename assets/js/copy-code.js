@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('div[class*="language-"]').forEach(function(block) {
+    document.querySelectorAll('div[class*=language-]').forEach(function(block) {
         // 创建复制按钮
         let copyButton = document.createElement('button');
         copyButton.className = 'copy-button';
@@ -7,17 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 获取代码块
         let code = block.querySelector("div.highlight");
-        let preElement = code.querySelector('pre');
+        if(!code) return;
         
         // 将复制按钮插入到pre元素之前
-        code.insertBefore(copyButton, preElement);
+        block.insertBefore(copyButton, code);
 
         // 添加点击事件
         copyButton.addEventListener('click', function() {
-            let codeBlock = code.querySelector('pre code');
-            if (!codeBlock) return;
-            
-            let codeContent = codeBlock.textContent;
+            let codeContent = code.querySelector('code').textContent;
             
             navigator.clipboard.writeText(codeContent).then(function() {
                 // 更改按钮文本
@@ -31,3 +28,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+

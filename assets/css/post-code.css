@@ -15,19 +15,15 @@ pre code {
     font-size: 0.9rem;
     line-height: 1.5;
 }
-
 /* Copy button styles */
 .copy-button {
     position: sticky;
     top: 10px;
-    float: right;
-    margin-right: 10px;
     padding: 6px 12px;
     background: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 3px;
     color: #333;
-    cursor: pointer;
     font-size: 14px;
     transition: all 0.2s ease;
     z-index: 10;
