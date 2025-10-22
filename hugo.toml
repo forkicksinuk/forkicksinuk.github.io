@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://forkicksinuk.github.io'
 languageCode = 'en-us'
 title = 'forkicks 写字的地方'
 theme = 'morandi'
