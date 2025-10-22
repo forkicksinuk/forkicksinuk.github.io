@@ -6,3 +6,8 @@ archetypes/
 
 # Ignore Obsidian configuration files
 .obsidian/
+
+# Ignore Obsidian templates folder
+_templates/
+
+content/posts/.obsidian
