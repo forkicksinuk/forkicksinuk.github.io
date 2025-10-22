@@ -1,26 +1,47 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-{{ $description := .Params.summary | default .Description | default .Summary | default .Site.Params.description }}
-{{ if $description }}<meta name="description" content="{{ $description }}">{{ end }}
-{{ with .Site.Language.Lang }}<meta name="language" content="{{ . }}">{{ end }}
-{{ with site.Home.OutputFormats.Get "RSS" }}
-  <link rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+  {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{
+  end }}
+</title>
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}" />
+<link rel="alternate icon" href="{{ "favicon.ico" | relURL }}" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css"
+/>
+{{ $description := .Params.summary | default .Description | default .Summary |
+default .Site.Params.description }} {{ if $description }}<meta
+  name="description"
+  content="{{ $description }}"
+/>{{ end }} {{ with .Site.Language.Lang }}<meta
+  name="language"
+  content="{{ . }}"
+/>{{ end }} {{ with site.Home.OutputFormats.Get "RSS" }}
+<link
+  rel="alternate"
+  type="{{ .MediaType.Type }}"
+  title="{{ $.Site.Title }}"
+  href="{{ .RelPermalink }}"
+/>
 {{ end }}
 <script>
   (function () {
-    'use strict';
+    "use strict";
 
-    var storageKey = 'theme-preference';
+    var storageKey = "theme-preference";
     var docEl = document.documentElement;
-    var supportsMatchMedia = typeof window !== 'undefined' && typeof window.matchMedia === 'function';
-    var prefersDarkQuery = supportsMatchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    var supportsMatchMedia =
+      typeof window !== "undefined" && typeof window.matchMedia === "function";
+    var prefersDarkQuery = supportsMatchMedia
+      ? window.matchMedia("(prefers-color-scheme: dark)")
+      : null;
 
     var applyTheme = function (theme) {
-      if (theme === 'dark') {
-        docEl.setAttribute('data-theme', 'dark');
+      if (theme === "dark") {
+        docEl.setAttribute("data-theme", "dark");
       } else {
-        docEl.removeAttribute('data-theme');
+        docEl.removeAttribute("data-theme");
       }
     };
 
@@ -41,11 +62,11 @@
     };
 
     var syncToggleState = function (theme) {
-      var toggle = document.querySelector('[data-theme-toggle]');
+      var toggle = document.querySelector("[data-theme-toggle]");
       if (!toggle) {
         return;
       }
-      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
     };
 
     var resolveTheme = function () {
@@ -54,23 +75,23 @@
         return stored;
       }
       if (prefersDarkQuery && prefersDarkQuery.matches) {
-        return 'dark';
+        return "dark";
       }
-      return 'light';
+      return "light";
     };
 
     var currentTheme = resolveTheme();
     applyTheme(currentTheme);
 
     var initToggle = function () {
-      var toggle = document.querySelector('[data-theme-toggle]');
+      var toggle = document.querySelector("[data-theme-toggle]");
       if (!toggle) {
         return;
       }
       syncToggleState(currentTheme);
-      toggle.addEventListener('click', function () {
-        var isDark = docEl.getAttribute('data-theme') === 'dark';
-        var nextTheme = isDark ? 'light' : 'dark';
+      toggle.addEventListener("click", function () {
+        var isDark = docEl.getAttribute("data-theme") === "dark";
+        var nextTheme = isDark ? "light" : "dark";
         applyTheme(nextTheme);
         syncToggleState(nextTheme);
         persistTheme(nextTheme);
@@ -78,8 +99,8 @@
       });
     };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initToggle, { once: true });
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initToggle, { once: true });
     } else {
       initToggle();
     }
@@ -89,26 +110,34 @@
         if (getStoredTheme()) {
           return;
         }
-        var nextTheme = event.matches ? 'dark' : 'light';
+        var nextTheme = event.matches ? "dark" : "light";
         applyTheme(nextTheme);
         syncToggleState(nextTheme);
         currentTheme = nextTheme;
       };
 
-      if (typeof prefersDarkQuery.addEventListener === 'function') {
-        prefersDarkQuery.addEventListener('change', handlePreferenceChange);
-      } else if (typeof prefersDarkQuery.addListener === 'function') {
+      if (typeof prefersDarkQuery.addEventListener === "function") {
+        prefersDarkQuery.addEventListener("change", handlePreferenceChange);
+      } else if (typeof prefersDarkQuery.addListener === "function") {
         prefersDarkQuery.addListener(handlePreferenceChange);
       }
     }
   })();
 </script>
-{{ with resources.Get "css/main.css" }}
-  {{ $styles := . | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+{{ with resources.Get "css/main.css" }} {{ $styles := . | resources.Minify |
+resources.Fingerprint }}
+<link
+  rel="stylesheet"
+  href="{{ $styles.RelPermalink }}"
+  integrity="{{ $styles.Data.Integrity }}"
+/>
 {{ end }}
 <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-{{ with resources.Get "js/search.js" }}
-  {{ $script := . | resources.Minify | resources.Fingerprint }}
-  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ with resources.Get "js/search.js" }} {{ $script := . | resources.Minify |
+resources.Fingerprint }}
+<script
+  defer
+  src="{{ $script.RelPermalink }}"
+  integrity="{{ $script.Data.Integrity }}"
+></script>
 {{ end }}
