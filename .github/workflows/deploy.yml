@@ -29,6 +29,8 @@ defaults:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # <--- 添加这一行，给予 workflow 写权限
     steps:
       # 1.检出你的代码
       - name: Checkout
