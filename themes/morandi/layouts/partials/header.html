@@ -8,6 +8,32 @@
       <nav class="site-nav" aria-label="Primary">
         <a class="site-nav__link" href="{{ "/" | relLangURL }}">Home</a>
       </nav>
+      <div class="site-search" data-search>
+        <label class="visually-hidden" for="site-search-input">Search posts</label>
+        <input
+          class="site-search__input"
+          id="site-search-input"
+          type="search"
+          name="q"
+          placeholder="Search posts..."
+          aria-label="Search posts"
+          aria-controls="site-search-results"
+          aria-expanded="false"
+          autocomplete="off"
+          autocapitalize="none"
+          spellcheck="false"
+          data-search-input
+        >
+        <div
+          class="site-search__results"
+          id="site-search-results"
+          role="listbox"
+          aria-live="polite"
+          aria-label="Search results"
+          hidden
+          data-search-results
+        ></div>
+      </div>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" data-theme-toggle>
         <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5" />

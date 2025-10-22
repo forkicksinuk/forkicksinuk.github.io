@@ -4,6 +4,9 @@ title = 'forkicks 写字的地方'
 theme = 'morandi'
 ignoreFiles = ["/content/posts/_templates/"]
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [pagination]
   pagerSize = 5
 

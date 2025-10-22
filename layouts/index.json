@@ -1,0 +1,16 @@
+{{- $pages := where .Site.RegularPages "Section" "posts" -}}
+{{- $pages = sort $pages "Date" "desc" -}}
+[
+{{- range $index, $page := $pages }}
+  {{- if $index }},{{ end }}
+  {{- $summary := $page.Summary | plainify -}}
+  {{- with $page.Params.summary }}{{- $summary = . | plainify -}}{{- end }}
+  {
+    "title": {{ $page.Title | jsonify }},
+    "summary": {{ $summary | jsonify }},
+    "content": {{ $page.Plain | plainify | jsonify }},
+    "permalink": {{ $page.Permalink | jsonify }},
+    "date": {{ $page.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }}
+  }
+{{- end }}
+]

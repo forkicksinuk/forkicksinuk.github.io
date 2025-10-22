@@ -107,3 +107,8 @@
   {{ $styles := . | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 {{ end }}
+<script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+{{ with resources.Get "js/search.js" }}
+  {{ $script := . | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}
