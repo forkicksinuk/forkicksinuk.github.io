@@ -7,6 +7,102 @@
 {{ with site.Home.OutputFormats.Get "RSS" }}
   <link rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
 {{ end }}
+<script>
+  (function () {
+    'use strict';
+
+    var storageKey = 'theme-preference';
+    var docEl = document.documentElement;
+    var supportsMatchMedia = typeof window !== 'undefined' && typeof window.matchMedia === 'function';
+    var prefersDarkQuery = supportsMatchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+    var applyTheme = function (theme) {
+      if (theme === 'dark') {
+        docEl.setAttribute('data-theme', 'dark');
+      } else {
+        docEl.removeAttribute('data-theme');
+      }
+    };
+
+    var getStoredTheme = function () {
+      try {
+        return window.localStorage.getItem(storageKey);
+      } catch (err) {
+        return null;
+      }
+    };
+
+    var persistTheme = function (theme) {
+      try {
+        window.localStorage.setItem(storageKey, theme);
+      } catch (err) {
+        // Silent failure (e.g. private browsing)
+      }
+    };
+
+    var syncToggleState = function (theme) {
+      var toggle = document.querySelector('[data-theme-toggle]');
+      if (!toggle) {
+        return;
+      }
+      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    };
+
+    var resolveTheme = function () {
+      var stored = getStoredTheme();
+      if (stored) {
+        return stored;
+      }
+      if (prefersDarkQuery && prefersDarkQuery.matches) {
+        return 'dark';
+      }
+      return 'light';
+    };
+
+    var currentTheme = resolveTheme();
+    applyTheme(currentTheme);
+
+    var initToggle = function () {
+      var toggle = document.querySelector('[data-theme-toggle]');
+      if (!toggle) {
+        return;
+      }
+      syncToggleState(currentTheme);
+      toggle.addEventListener('click', function () {
+        var isDark = docEl.getAttribute('data-theme') === 'dark';
+        var nextTheme = isDark ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        syncToggleState(nextTheme);
+        persistTheme(nextTheme);
+        currentTheme = nextTheme;
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initToggle, { once: true });
+    } else {
+      initToggle();
+    }
+
+    if (prefersDarkQuery) {
+      var handlePreferenceChange = function (event) {
+        if (getStoredTheme()) {
+          return;
+        }
+        var nextTheme = event.matches ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        syncToggleState(nextTheme);
+        currentTheme = nextTheme;
+      };
+
+      if (typeof prefersDarkQuery.addEventListener === 'function') {
+        prefersDarkQuery.addEventListener('change', handlePreferenceChange);
+      } else if (typeof prefersDarkQuery.addListener === 'function') {
+        prefersDarkQuery.addListener(handlePreferenceChange);
+      }
+    }
+  })();
+</script>
 {{ with resources.Get "css/main.css" }}
   {{ $styles := . | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">

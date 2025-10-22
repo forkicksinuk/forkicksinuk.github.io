@@ -4,10 +4,23 @@
       <a class="site-title" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
       {{ with .Site.Params.tagline }}<p class="site-tagline">{{ . }}</p>{{ end }}
     </div>
-    <nav class="site-nav" aria-label="Primary">
-      <a class="site-nav__link" href="{{ "/" | relLangURL }}">Home</a>
-      <a class="site-nav__link" href="{{ "/posts/" | relLangURL }}">Posts</a>
-      <a class="site-nav__link" href="{{ "/tags/" | relLangURL }}">Tags</a>
-    </nav>
+    <div class="site-actions">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav__link" href="{{ "/" | relLangURL }}">Home</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" data-theme-toggle>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 2.25v2.5M12 19.25v2.5M4.75 12h-2.5M21.75 12h-2.5M5.95 5.95l-1.77-1.77M19.82 19.82l-1.77-1.77M5.95 18.05l-1.77 1.77M19.82 4.18l-1.77 1.77" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <!-- 主月牙形状 -->
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- 装饰星星 -->
+          <path d="M6.5 5.5l0.3 0.9l0.9 0.3l-0.9 0.3l-0.3 0.9l-0.3-0.9l-0.9-0.3l0.9-0.3z" fill="currentColor" opacity="0.6" />
+          <path d="M19.5 8l0.2 0.6l0.6 0.2l-0.6 0.2l-0.2 0.6l-0.2-0.6l-0.6-0.2l0.6-0.2z" fill="currentColor" opacity="0.5" />
+        </svg>
+      </button>
+    </div>
   </div>
 </header>

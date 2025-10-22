@@ -1,27 +1,28 @@
 {{ define "main" }}
 <section class="home">
   <header class="home__header">
-    <h1 class="home__title">{{ .Site.Title }}</h1>
-    {{ with .Site.Params.description }}<p class="home__description">{{ . }}</p>{{ end }}
+    {{ with .Site.Params.description }}
+    <p class="home__description">{{ . }}</p>
+    {{ end }}
   </header>
   <div class="post-list">
     {{ range .Site.RegularPages.ByDate.Reverse }}
     <article class="post-card">
-      <h2 class="post-card__title"><a class="post-card__link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      <div class="post-card__meta">
-        <span class="post-card__date">{{ .Date.Format "2006-01-02" }}</span>
-        {{ with .Params.location }}
-        <span class="post-card__separator">&middot;</span>
-        <span class="post-card__location">{{ . }}</span>
-        {{ end }}
-      </div>
-      {{ with .Params.summary }}
-      <p class="post-card__summary">{{ . }}</p>
-      {{ else }}
-        {{ with .Summary }}
+      <a class="post-card__link" href="{{ .RelPermalink }}">
+        <h2 class="post-card__title">{{ .Title }}</h2>
+        <div class="post-card__meta">
+          <span class="post-card__date">{{ .Date.Format "2006-01-02" }}</span>
+          {{ with .Params.location }}
+          <span class="post-card__separator">&middot;</span>
+          <span class="post-card__location">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ with .Params.summary }}
         <p class="post-card__summary">{{ . }}</p>
-        {{ end }}
-      {{ end }}
+        {{ else }} {{ with .Summary }}
+        <p class="post-card__summary">{{ . }}</p>
+        {{ end }} {{ end }}
+      </a>
     </article>
     {{ end }}
   </div>
