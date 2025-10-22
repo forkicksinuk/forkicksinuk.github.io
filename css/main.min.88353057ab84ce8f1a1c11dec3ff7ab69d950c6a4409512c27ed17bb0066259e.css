@@ -14,15 +14,15 @@
     ),
     repeating-linear-gradient(
       -32deg,
-      rgba(176, 160, 146, 0.085) 0,
-      rgba(176, 160, 146, 0.085) 1px,
+      rgba(176, 160, 146, 0.22) 0,
+      rgba(176, 160, 146, 0.22) 1px,
       transparent 1px,
       transparent 7px
     ),
     repeating-linear-gradient(
       92deg,
-      rgba(188, 172, 158, 0.07) 0,
-      rgba(188, 172, 158, 0.07) 2px,
+      rgba(188, 172, 158, 0.18) 0,
+      rgba(188, 172, 158, 0.18) 2px,
       transparent 2px,
       transparent 11px
     );--selection-bg:rgba(255, 226, 150, 0.85);--selection-color:#3f2d1a}:root[data-theme=dark]{--color-bg:#1f1d1b;--color-text:#e0dbd7;--color-heading:#f7f3ef;--color-accent-pink:#d9a8b0;--color-accent-purple:#c6c0cf;--color-accent-green:#b2d5c8;--color-border:#3a3734;--color-surface:#292623;--paper-texture:radial-gradient(
