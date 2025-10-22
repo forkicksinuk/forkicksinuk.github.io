@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "ce99b76d4fbcc2cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a7e8b97deff302b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0df72e2680cce893",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "767cac8673102f7e",
+    "type": "split",
+    "children": [
+      {
+        "id": "60fcc3ee93698cc8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09e05d65d030b497",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "55b4689073893042",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b90815eda40c4c4f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d3a1ad09a5292df2",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ad3b01f5c573d39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45222eec336c87f7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/posts/untitled/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for index"
+            }
+          },
+          {
+            "id": "0713ba415898b3d8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/posts/untitled/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from index"
+            }
+          },
+          {
+            "id": "9f13603b53f20b94",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0b7e0151b5bd55e3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/posts/untitled/index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "0df72e2680cce893",
+  "lastOpenFiles": [
+    "public/posts/hugo-做静态博客好麻烦/index.html",
+    "public/posts/hugo-做静态博客好麻烦",
+    "content/posts/hugo 做静态博客好麻烦.md",
+    "content/posts/Untitled.md",
+    "Untitled",
+    "content/posts/_templates/hugo front matter.md",
+    "content/posts/untitled/index.md",
+    "public/posts/好麻烦/index.html",
+    "public/posts/好麻烦/untitled/index.html",
+    "public/posts/好麻烦/untitled",
+    "public/posts/好麻烦",
+    "content/posts/untitled",
+    "content/posts/gemini在翻译长文本的时候会讲出不该讲的话/index.md",
+    "content/posts/gemini在翻译长文本的时候会讲出不该讲的话/gemini在翻译长文本的时候会讲出不该讲的话.md",
+    "public/css/main.min.9a483400238025a37b616f0700a58de816ab51793970192a77c1aba2abb8eb9c.css",
+    "public/posts/gemini在翻译长文本的时候会讲出不该讲的话/Pasted image 20251022183142.png",
+    "content/posts/gemini在翻译长文本的时候会讲出不该讲的话/Pasted image 20251022183142.png",
+    "content/posts/近期对未来和ai关系的看法/index.md",
+    "content/posts/近期对未来和ai关系的看法",
+    "content/posts/最近的关键词/index.md",
+    "content/posts/最近的关键词",
+    "content/posts/我对atlas的一点思考/index.md",
+    "content/posts/Pasted image 20251022181133.png",
+    "content/posts/Pasted image 20251022175215.png",
+    "public/posts/Pasted image 20251022181133.png",
+    "public/posts/Pasted image 20251022175215.png",
+    "images/Pasted image 20251022183142.png",
+    "public/images/Pasted image 20251022182045.png",
+    "static/images/Pasted image 20251022182045.png",
+    "public/images/Pasted image 20251022181848.png"
+  ]
+}

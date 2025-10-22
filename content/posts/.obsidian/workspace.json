@@ -48,9 +48,37 @@
               "icon": "lucide-file",
               "title": "最近的关键词"
             }
+          },
+          {
+            "id": "edb34f486fbd0120",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_templates/hugo front matter.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "hugo front matter"
+            }
+          },
+          {
+            "id": "1cb47cd071752768",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "hugo 做静态博客好麻烦.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "hugo 做静态博客好麻烦"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -123,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "最近的关键词.md",
+                "file": "gemini在翻译长文本的时候会讲出不该讲的话.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 最近的关键词"
+              "title": "Backlinks for gemini在翻译长文本的时候会讲出不该讲的话"
             }
           },
           {
@@ -142,12 +170,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "最近的关键词.md",
+                "file": "gemini在翻译长文本的时候会讲出不该讲的话.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 最近的关键词"
+              "title": "Outgoing links from gemini在翻译长文本的时候会讲出不该讲的话"
             }
           },
           {
@@ -171,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "最近的关键词.md",
+                "file": "gemini在翻译长文本的时候会讲出不该讲的话.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 最近的关键词"
+              "title": "Outline of gemini在翻译长文本的时候会讲出不该讲的话"
             }
           }
         ]
@@ -198,12 +226,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "34f22832311fa115",
+  "active": "1cb47cd071752768",
   "lastOpenFiles": [
-    "近期对未来和ai关系的看法.md",
-    "最近的关键词.md",
+    "gemini在翻译长文本的时候会讲出不该讲的话.md",
     "我对atlas的一点思考.md",
+    "hugo 做静态博客好麻烦.md",
     "_templates/hugo front matter.md",
+    "Pasted image 20251022181133.png",
+    "Pasted image 20251022175215.png",
+    "最近的关键词.md",
+    "近期对未来和ai关系的看法.md",
     "welcome.md",
     "color-palette.md",
     "morandi-colors.md",

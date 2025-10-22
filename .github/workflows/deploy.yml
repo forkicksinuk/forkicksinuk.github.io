@@ -1,0 +1,66 @@
+# 文件路径: .github/workflows/deploy.yml
+
+name: Deploy Hugo site to Pages
+
+on:
+  # 在推送到 `main` 分支时触发
+  push:
+    branches:
+      - main
+  # 允许你从 Actions 页签手动触发
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许一个并发的部署，跳过排队中的任务
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# 默认使用 Hugo 构建
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 步骤1：检出你的源码
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true # 如果你的主题是 git submodule，这行是必须的
+          fetch-depth: 0 # 获取所有 git 历史，用于 lastmod 等功能
+
+      # 步骤2：安装 Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest" # 或者指定一个版本, e.g., '0.121.0'
+          extended: true # 如果你的主题需要 Sass/SCSS，这行是必须的
+
+      # 步骤3：构建网站
+      - name: Build
+        run: hugo --minify # --minify 是可选的，可以压缩文件大小
+
+      # 步骤4：部署到 GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # 这个 personal_access_token 是必须的，用于跨仓库推送
+          # 你需要先在 GitHub 生成一个 Personal Access Token
+          # 并把它作为 Secret (例如 HUGO_DEPLOY_TOKEN) 添加到你的源码仓库中
+          personal_access_token: ${{ secrets.HUGO_DEPLOY_TOKEN }}
+          # 目标仓库
+          external_repository: 你的用户名/你的用户名.github.io
+          # 部署到目标仓库的哪个分支，对于用户/组织主页，通常是 master 或 main
+          publish_branch: main # 或者 master
+          # 要发布哪个目录下的内容
+          publish_dir: ./public
+          # 提交信息
+          commit_message: ${{ github.event.head_commit.message }}

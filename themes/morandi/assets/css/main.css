@@ -342,6 +342,22 @@ a:focus {
   font-size: 0.95rem;
 }
 
+.single__content img {
+  display: block;
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+}
+
+.post-card__summary img {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+}
+
 .single__content code {
   background-color: #f0ece9;
   padding: 0.15rem 0.35rem;

@@ -3,3 +3,12 @@ languageCode = 'en-us'
 title = 'forkicks 写字的地方'
 theme = 'morandi'
 ignoreFiles = ["/content/posts/_templates/"]
+
+[module]
+  [[module.mounts]]
+    source = 'static'
+    target = 'static'
+
+  [[module.mounts]]
+    source = 'images'
+    target = 'static/images'
