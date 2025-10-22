@@ -25,15 +25,15 @@
     ),
     repeating-linear-gradient(
       -32deg,
-      rgba(176, 160, 146, 0.085) 0,
-      rgba(176, 160, 146, 0.085) 1px,
+      rgba(176, 160, 146, 0.22) 0,
+      rgba(176, 160, 146, 0.22) 1px,
       transparent 1px,
       transparent 7px
     ),
     repeating-linear-gradient(
       92deg,
-      rgba(188, 172, 158, 0.07) 0,
-      rgba(188, 172, 158, 0.07) 2px,
+      rgba(188, 172, 158, 0.18) 0,
+      rgba(188, 172, 158, 0.18) 2px,
       transparent 2px,
       transparent 11px
     );
