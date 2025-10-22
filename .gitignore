@@ -3,3 +3,6 @@ public/
 resources/
 .hugo_build.lock
 archetypes/
+
+# Ignore Obsidian configuration files
+.obsidian/
