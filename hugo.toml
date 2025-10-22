@@ -1,5 +1,4 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme='my-simple-theme'
     ignoreFiles = ["/content/posts/_templates/"]
