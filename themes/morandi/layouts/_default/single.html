@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="single">
+  <header class="single__header">
+    <h1 class="single__title">{{ .Title }}</h1>
+    <div class="single__meta">
+      <span class="single__date">{{ .Date.Format "2006-01-02" }}</span>
+      {{ with .Params.location }}
+      <span class="single__separator">&middot;</span>
+      <span class="single__location">{{ . }}</span>
+      {{ end }}
+      {{ with .Params.tags }}
+      <span class="single__separator">&middot;</span>
+      <span class="single__tags">
+        {{- range $index, $tag := . -}}
+          {{- if gt $index 0 }}, {{ end -}}
+          <a class="single__tag" href="{{ (printf "/tags/%s/" ($tag | urlize)) | relLangURL }}">{{ $tag }}</a>
+        {{- end -}}
+      </span>
+      {{ end }}
+    </div>
+  </header>
+  <div class="single__content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

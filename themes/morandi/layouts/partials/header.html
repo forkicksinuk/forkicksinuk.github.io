@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="site-branding">
+      <a class="site-title" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
+      {{ with .Site.Params.tagline }}<p class="site-tagline">{{ . }}</p>{{ end }}
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="site-nav__link" href="{{ "/" | relLangURL }}">Home</a>
+      <a class="site-nav__link" href="{{ "/posts/" | relLangURL }}">Posts</a>
+      <a class="site-nav__link" href="{{ "/tags/" | relLangURL }}">Tags</a>
+    </nav>
+  </div>
+</header>

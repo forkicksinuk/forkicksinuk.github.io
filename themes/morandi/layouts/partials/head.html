@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ $description := .Params.summary | default .Description | default .Summary | default .Site.Params.description }}
+{{ if $description }}<meta name="description" content="{{ $description }}">{{ end }}
+{{ with .Site.Language.Lang }}<meta name="language" content="{{ . }}">{{ end }}
+{{ with site.Home.OutputFormats.Get "RSS" }}
+  <link rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+{{ end }}
+{{ with resources.Get "css/main.css" }}
+  {{ $styles := . | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+{{ end }}

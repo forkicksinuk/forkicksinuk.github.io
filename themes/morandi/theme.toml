@@ -1,0 +1,9 @@
+name = 'Morandi'
+license = 'MIT'
+licenselink = 'https://opensource.org/licenses/MIT'
+description = 'Minimal, elegant Hugo theme inspired by the Morandi palette.'
+min_version = '0.120.0'
+
+[author]
+  name = 'Morandi Design'
+  homepage = 'https://example.org'

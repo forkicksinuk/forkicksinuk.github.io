@@ -1,4 +1,5 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-    ignoreFiles = ["/content/posts/_templates/"]
+theme = 'morandi'
+ignoreFiles = ["/content/posts/_templates/"]
