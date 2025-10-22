@@ -1,8 +1,26 @@
 baseURL = 'https://forkicksinuk.github.io'
-languageCode = 'en-us'
+languageCode = 'zh-cn'
 title = 'forkicks 写字的地方'
 theme = 'morandi'
 ignoreFiles = ["/content/posts/_templates/"]
+
+[params]
+  description = "forkicks 的个人博客，记录关于技术、AI 和个人思考的点滴。"
+  tagline = "一个写字的地方"
+[params.giscus]
+  enable = true
+  repo = "forkicksinuk/forkicksinuk.github.io"
+  repoId = "R_kgDOMxA5bQ"
+  category = "General"
+  categoryId = "DIC_kwDOMxA5bc4Cw8F9"
+  mapping = "pathname"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  theme = "preferred_color_scheme"
+  lang = "zh-CN"
+  loading = "lazy"
+
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

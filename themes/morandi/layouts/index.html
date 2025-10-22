@@ -1,10 +1,5 @@
 {{ define "main" }}
 <section class="home">
-  <header class="home__header">
-    {{ with .Site.Params.description }}
-    <p class="home__description">{{ . }}</p>
-    {{ end }}
-  </header>
   {{ $paginator := .Paginate (.Site.RegularPages.ByDate.Reverse) }}
   <div class="post-list">
     {{ range $paginator.Pages }}
@@ -30,28 +25,42 @@
   {{ if gt $paginator.TotalPages 1 }}
   <nav class="pagination" aria-label="Pagination">
     {{ if $paginator.HasPrev }}
-    <a class="pagination__nav" href="{{ $paginator.Prev.URL }}">&larr; Newer Posts</a>
+    <a class="pagination__nav" href="{{ $paginator.Prev.URL }}"
+      >&larr; Newer Posts</a
+    >
     {{ else }}
-    <span class="pagination__nav pagination__nav--disabled">&larr; Newer Posts</span>
+    <span class="pagination__nav pagination__nav--disabled"
+      >&larr; Newer Posts</span
+    >
     {{ end }}
     <ul class="pagination__pages">
       {{ range $page := $paginator.Pagers }}
       <li>
         {{ if eq $page $paginator }}
-        <span class="pagination__page pagination__page--current">{{ $page.PageNumber }}</span>
+        <span class="pagination__page pagination__page--current"
+          >{{ $page.PageNumber }}</span
+        >
         {{ else }}
-        <a class="pagination__page" href="{{ $page.URL }}">{{ $page.PageNumber }}</a>
+        <a class="pagination__page" href="{{ $page.URL }}"
+          >{{ $page.PageNumber }}</a
+        >
         {{ end }}
       </li>
       {{ end }}
     </ul>
     {{ if $paginator.HasNext }}
-    <a class="pagination__nav" href="{{ $paginator.Next.URL }}">Older Posts &rarr;</a>
+    <a class="pagination__nav" href="{{ $paginator.Next.URL }}"
+      >Older Posts &rarr;</a
+    >
     {{ else }}
-    <span class="pagination__nav pagination__nav--disabled">Older Posts &rarr;</span>
+    <span class="pagination__nav pagination__nav--disabled"
+      >Older Posts &rarr;</span
+    >
     {{ end }}
   </nav>
-  <p class="pagination__info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</p>
+  <p class="pagination__info">
+    Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+  </p>
   {{ end }}
 </section>
 {{ end }}
