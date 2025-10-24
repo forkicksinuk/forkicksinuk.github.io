@@ -10,29 +10,37 @@
       </nav>
       <div class="site-search" data-search>
         <label class="visually-hidden" for="site-search-input">Search posts</label>
-        <input
-          class="site-search__input"
-          id="site-search-input"
-          type="search"
-          name="q"
-          placeholder="Search posts..."
-          aria-label="Search posts"
-          aria-controls="site-search-results"
-          aria-expanded="false"
-          autocomplete="off"
-          autocapitalize="none"
-          spellcheck="false"
-          data-search-input
-        >
-        <div
-          class="site-search__results"
-          id="site-search-results"
-          role="listbox"
-          aria-live="polite"
-          aria-label="Search results"
-          hidden
-          data-search-results
-        ></div>
+        <div class="site-search__control">
+          <input
+            class="site-search__input"
+            id="site-search-input"
+            type="search"
+            name="q"
+            placeholder="Search posts..."
+            aria-label="Search posts"
+            aria-haspopup="dialog"
+            aria-controls="site-search-modal"
+            aria-expanded="false"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            enterkeyhint="search"
+            data-search-input
+          >
+          <button
+            class="site-search__button"
+            type="button"
+            aria-label="Open search modal"
+            aria-controls="site-search-modal"
+            aria-expanded="false"
+            data-search-button
+          >
+            <svg class="site-search__icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path d="M16 16l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
       </div>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" data-theme-toggle>
         <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">

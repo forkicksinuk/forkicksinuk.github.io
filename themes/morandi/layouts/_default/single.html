@@ -8,6 +8,10 @@
       <span class="single__separator">&middot;</span>
       <span class="single__location">{{ . }}</span>
       {{ end }}
+      {{ with .Params.author }}
+      <span class="single__separator">&middot;</span>
+      <span class="single__author">{{ . }}</span>
+      {{ end }}
       {{ with .Params.tags }}
       <span class="single__separator">&middot;</span>
       <span class="single__tags">

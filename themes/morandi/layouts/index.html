@@ -12,6 +12,10 @@
           <span class="post-card__separator">&middot;</span>
           <span class="post-card__location">{{ . }}</span>
           {{ end }}
+          {{ with .Params.author }}
+          <span class="post-card__separator">&middot;</span>
+          <span class="post-card__author">{{ . }}</span>
+          {{ end }}
         </div>
         {{ with .Params.summary }}
         <p class="post-card__summary">{{ . }}</p>
