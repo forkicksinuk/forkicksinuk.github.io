@@ -26,7 +26,7 @@
   var closeButton = null;
   var previousActiveElement = null;
 
-  var MIN_QUERY_LENGTH = 2;
+  var MIN_QUERY_LENGTH = 1;
   var MAX_RESULTS = 12;
   var indexUrl = new URL('index.json', window.location.origin).toString();
 
@@ -346,7 +346,8 @@
     input.value = trimmed;
 
     if (trimmed.length < MIN_QUERY_LENGTH) {
-      renderMessage('Please enter at least ' + MIN_QUERY_LENGTH + ' characters.');
+      var unit = MIN_QUERY_LENGTH === 1 ? ' character.' : ' characters.';
+      renderMessage('Please enter at least ' + MIN_QUERY_LENGTH + unit);
       return;
     }
 
