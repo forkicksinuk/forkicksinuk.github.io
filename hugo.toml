@@ -1,5 +1,6 @@
 baseURL = 'https://forkicksinuk.github.io'
 languageCode = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
 title = 'forkicks 写字的地方'
 theme = 'morandi'
 ignoreFiles = ["/content/posts/_templates/"]
@@ -7,6 +8,8 @@ ignoreFiles = ["/content/posts/_templates/"]
 [params]
   description = "forkicks 的个人博客，记录关于技术、AI 和个人思考的点滴。"
   tagline = "一个写字的地方"
+  author = "forkicks"
+  keywords = ["技术博客", "AI", "编程", "个人思考", "开发工具", "静态网站"]
 [params.giscus]
   enable = true
   repo = "forkicksinuk/forkicksinuk.github.io"
@@ -27,6 +30,10 @@ ignoreFiles = ["/content/posts/_templates/"]
 
 [pagination]
   pagerSize = 5
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
 
 [module]
   [[module.mounts]]
